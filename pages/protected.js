@@ -52,6 +52,7 @@ export default function Protected({ navbarOptions }) {
   const getRequest = axios
     .get(`${API_URL}/protected`, {
       withCredentials: true, // IMPORTANT!!!
+      credentials: "include",
     })
     .then(function(response) {
       // handle success

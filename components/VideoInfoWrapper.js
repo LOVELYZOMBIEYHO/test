@@ -30,6 +30,7 @@ export default function VideoInforWrapper({ postId, posts }) {
           },
           {
             withCredentials: true, // IMPORTANT!!!
+            credentials: "include",
           }
         )
         .then(function(response) {
