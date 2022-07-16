@@ -1,0 +1,48 @@
+// body {
+//   margin: 0 16px;
+// }
+
+.TagsInput {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: text;
+  margin: 0 16px;
+  aspect-ratio: 20/1;
+  font-size: 20px;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    li {
+      display: flex;
+      border: 1px solid gray;
+      border-radius: 4px;
+      padding: 0 0 0 12px;
+      margin: 8px;
+      align-items: center;
+      cursor: default;
+      .clear {
+        display: inline-block;
+        margin-left: 12px;
+        padding: 0px 12px;
+        cursor: pointer;
+        background-color: slateblue;
+        color: #fff;
+      }
+    }
+  }
+
+  input[type="text"] {
+    border: none;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+  input[type="submit"] {
+    display: none;
+  }
+}

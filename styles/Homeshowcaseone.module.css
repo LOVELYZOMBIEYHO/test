@@ -1,0 +1,11 @@
+.mainDiv {
+  overflow-x: scroll;
+  white-space: nowrap;
+  display: block;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.mainDiv::-webkit-scrollbar {
+  display: none;
+}

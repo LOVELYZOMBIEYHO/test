@@ -1,0 +1,72 @@
+.formBtnDiv {
+  padding: 15px;
+}
+
+.formBtn {
+  font-size: 15px;
+}
+
+.submitBtn {
+  font-size: 15px;
+}
+.tagBtn {
+  font-size: 15px;
+}
+.filterLabelName {
+  font-size: 17px;
+}
+
+@media only screen and (max-width: 900px) {
+  .formBtnDiv {
+    padding: 13px;
+  }
+
+  .formBtn {
+    font-size: 13px;
+  }
+  .submitBtn {
+    font-size: 13px;
+  }
+  .tagBtn {
+    font-size: 13px;
+  }
+  .filterLabelName {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .formBtnDiv {
+    padding: 13px;
+  }
+  .formBtn {
+    font-size: 9px;
+  }
+  .submitBtn {
+    font-size: 9px;
+  }
+  .tagBtn {
+    font-size: 9px;
+  }
+  .filterLabelName {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .formBtnDiv {
+    padding: 8px;
+  }
+  .formBtn {
+    font-size: 8px;
+  }
+  .submitBtn {
+    font-size: 8px;
+  }
+  .tagBtn {
+    font-size: 8px;
+  }
+  .filterLabelName {
+    font-size: 10px;
+  }
+}

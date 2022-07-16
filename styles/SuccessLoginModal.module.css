@@ -1,0 +1,11 @@
+.successLoginModal {
+  position: absolute;
+  background-color: white;
+  text-align: center;
+
+  left: 1350px;
+}
+
+.loginDropDown {
+  left: 1000px;
+}

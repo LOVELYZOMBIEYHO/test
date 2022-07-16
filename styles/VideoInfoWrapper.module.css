@@ -1,0 +1,200 @@
+.hovertext {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+
+.hovertext:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 50px;
+  background-color: rgb(182, 66, 66);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 5px 0;
+  transition: opacity 0.5s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+}
+
+.hovertext:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Video-info-css */
+/* .video-div {
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 1000px;
+  padding-top: 70px;
+  padding-left: 5%;
+  background: #f9f9f9;
+  float: left;
+  padding-bottom: 56.25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-info {
+  width: 100%;
+  padding-top: 15px;
+}
+.metrics {
+  display: flex;
+}
+.title {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-bottom: 15px;
+}
+.views {
+  font-size: 14px;
+  font-weight: 400px;
+  color: rgb(96, 96, 96);
+}
+.video-options {
+  float: right;
+  margin-left: auto;
+}
+.likes_dislikes {
+  display: flex;
+  align-items: center;
+  color: rgb(170, 170, 170);
+  font-size: 14px;
+  font-weight: 500;
+}
+.like {
+  filter: opacity(50%);
+  width: 30px;
+  height: 30px;
+  padding-bottom: 5px;
+  padding-right: 3px;
+  cursor: pointer;
+}
+.likes_dislikes p,
+span {
+  padding-right: 20px;
+  padding-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.007px;
+  text-decoration: none;
+}
+
+.similar-videos {
+  padding-top: 70px;
+  padding-left: 2%;
+  color: #030303;
+  width: 23%;
+  float: right;
+  background-color: #f9f9f9;
+  height: 1300px;
+  display: flex;
+  flex-direction: column;
+}
+.similar-videos h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.other-videos {
+  display: inline-flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.tooltip {
+  height: 94px;
+  width: 168px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+.title {
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 16px;
+  cursor: pointer;
+  color: #030303;
+  padding-bottom: 5px;
+}
+.extra-info {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(96, 96, 96);
+  line-height: 18px;
+  cursor: pointer;
+}
+.reccomended-divider {
+  margin-bottom: 10px;
+  width: 90%;
+  height: 1px;
+  border: 0px;
+  background-color: #d3d3d3;
+}
+.info-divider {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 1px;
+  border: 0px;
+  background-color: #d3d3d3;
+}
+.author-info {
+  width: 100%;
+}
+
+.account {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+}
+.account-png {
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.subscribe {
+  margin-left: auto;
+}
+.subscribe button {
+  width: 113px;
+  height: 37px;
+  border: none;
+  color: white;
+  background-color: rgb(204, 0, 0);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.007px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.account div h5 {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.account div p {
+  color: rgb(96, 96, 96);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.summary {
+  margin-left: 64px;
+  width: 75%;
+  font-size: 14px;
+  line-height: 21px;
+  padding-bottom: 40px;
+} */
+
+/* above Video-info-css */

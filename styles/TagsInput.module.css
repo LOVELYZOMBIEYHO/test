@@ -1,0 +1,59 @@
+.TagsInput {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  cursor: text;
+  margin: 0 16px;
+  aspect-ratio: 20/1;
+  font-size: 20px;
+}
+
+.TagsInput ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+}
+
+.TagsInput ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 0 0 0 12px;
+  margin: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: default;
+}
+
+.TagsInput ul li .clear {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 0px 12px;
+  cursor: pointer;
+  background-color: slateblue;
+  color: #fff;
+}
+
+.TagsInput input[type="text"] {
+  border: none;
+  background: transparent;
+}
+
+.TagsInput input[type="text"]:focus {
+  outline: none;
+}
+
+.TagsInput input[type="submit"] {
+  display: none;
+}
+/*# sourceMappingURL=TagsInput.module.css.map */
