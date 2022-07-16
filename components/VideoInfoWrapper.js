@@ -77,6 +77,20 @@ export default function VideoInforWrapper({ postId, posts }) {
     }
     checkLikedPosts();
   }, []);
+  // --------------------------------------
+  // const response = await fetch(`${API_URL}/user/likelistcsvdownload`, {
+  //   method: "GET",
+  //   // equal axios withCredentials: true,
+  //   credentials: "include",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     Authorization:
+  //       "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY1Nzc0MzM2MywianRpIjoiNmZmZWQwOGQtZjEyMy00NzI1LTg2ZTQtMGYwOTQ0NGE5MjU1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6Inlob3NvbjExMTZAZ21haWwuY29tIiwibmJmIjoxNjU3NzQzMzYzLCJleHAiOjE2NTgzNDgxNjN9.CXbXsVoGkJQ0H5K36I-L7PXF1MahiMGU0AawxltLCr0",
+  //   },
+  // });
+  // const data = await response.json();
+
+  // --------------------------------------
 
   // CountAPI
   useEffect(() => {
