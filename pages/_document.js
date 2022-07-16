@@ -5,6 +5,12 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* test no ssl backend */}
+          <meta
+            http-equiv="Content-Security-Policy"
+            content="upgrade-insecure-requests"
+          />
+
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
