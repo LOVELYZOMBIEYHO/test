@@ -11,7 +11,10 @@ export const API_URL =
 // export const API_URL =
 //   process.env.NEXT_PUBLIC_API_URL || "https://jseedav.herokuapp.com";
 
+// export const FRONT_URL =
+//   process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+
 export const FRONT_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+  process.env.NEXT_PUBLIC_API_URL || "https://jseedav.com";
 
 export const revalidateTimeVariable = 120;
