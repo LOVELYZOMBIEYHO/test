@@ -6,10 +6,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* test no ssl backend */}
-          <meta
+          {/* <meta
             http-equiv="Content-Security-Policy"
             content="upgrade-insecure-requests"
-          />
+          /> */}
 
           <link
             rel="stylesheet"
