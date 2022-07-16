@@ -65,6 +65,7 @@ export default function VideoInforWrapper({ postId, posts }) {
           },
           {
             withCredentials: true,
+            credentials: "include",
           }
         );
 
