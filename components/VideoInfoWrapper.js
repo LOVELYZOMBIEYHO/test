@@ -65,15 +65,44 @@ export default function VideoInforWrapper({ postId, posts }) {
   //   }
   //   getLikedPosts();
   // }, []);
+  // -----------------------
+  // useEffect(() => {
+  //   async function checkLikedPosts() {
+  //     // if not login, dont render
+  //     // if (Cookies.get("username")) {
+  //     const results = await axios.post(
+  //       `${API_URL}/user/renderlikevideoicon`,
+  //       {
+  //         likePostId: postId,
+  //       },
+  //       {
+  //         withCredentials: true,
+  //         credentials: "include",
+  //       }
+  //     );
 
+  //     if (results.data.like == true) {
+  //       setShowIsLike("likeBtnLiked");
+  //     } else {
+  //       setShowIsLike("likeBtnNormal");
+  //     }
+  //     // }
+  //   }
+  //   checkLikedPosts();
+  // }, []);
+  // ----------------------------------
   useEffect(() => {
     async function checkLikedPosts() {
       // if not login, dont render
       // if (Cookies.get("username")) {
-      const results = await axios.post(
-        `${API_URL}/user/renderlikevideoicon`,
+
+      const params = new URLSearchParams();
+      params.append("likePostId", postId);
+      const results = await axios(
         {
-          likePostId: postId,
+          method: "post",
+          url: `${API_URL}/user/renderlikevideoicon`,
+          data: params,
         },
         {
           withCredentials: true,
@@ -90,6 +119,7 @@ export default function VideoInforWrapper({ postId, posts }) {
     }
     checkLikedPosts();
   }, []);
+
   // --------------------------------------
   // const response = await fetch(`${API_URL}/user/likelistcsvdownload`, {
   //   method: "GET",
