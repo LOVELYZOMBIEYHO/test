@@ -55,27 +55,38 @@ export default function VideoInforWrapper({ postId, posts }) {
     }
   };
 
+  // useEffect(() => {
+  //   async function getLikedPosts() {
+  //     const results = await axios(`${API_URL}/user/getlikevideo`, {
+  //       withCredentials: true,
+  //       credentials: "include",
+  //     });
+  //     setDataLikePost(results.data);
+  //   }
+  //   getLikedPosts();
+  // }, []);
+
   useEffect(() => {
     async function checkLikedPosts() {
       // if not login, dont render
-      if (Cookies.get("username")) {
-        const results = await axios.post(
-          `${API_URL}/user/renderlikevideoicon`,
-          {
-            likePostId: postId,
-          },
-          {
-            withCredentials: true,
-            credentials: "include",
-          }
-        );
-
-        if (results.data.like == true) {
-          setShowIsLike("likeBtnLiked");
-        } else {
-          setShowIsLike("likeBtnNormal");
+      // if (Cookies.get("username")) {
+      const results = await axios.post(
+        `${API_URL}/user/renderlikevideoicon`,
+        {
+          likePostId: postId,
+        },
+        {
+          withCredentials: true,
+          credentials: "include",
         }
+      );
+
+      if (results.data.like == true) {
+        setShowIsLike("likeBtnLiked");
+      } else {
+        setShowIsLike("likeBtnNormal");
       }
+      // }
     }
     checkLikedPosts();
   }, []);
