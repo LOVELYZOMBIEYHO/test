@@ -19,13 +19,21 @@ export default function editprofile({
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newPasswordConfirm, setNewPasswordConfirm] = useState("");
-
+  const tokenJWT = Cookies.get("AT");
   useEffect(() => {
     async function checkTokenFunction() {
       const checkToken = axios
         .get(`${API_URL}/user/profile`, {
-          withCredentials: true,
-          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         })
         .then(function(response) {
           // console.log(response);
@@ -47,7 +55,7 @@ export default function editprofile({
           // console.clear();
           Cookies.remove("username");
           router.push("/login");
-          console.log(error);
+          // console.log(error);
         });
     }
     checkTokenFunction();
@@ -55,7 +63,6 @@ export default function editprofile({
 
   const submitChangeUserName = (e) => {
     e.preventDefault();
-
     axios
       .post(
         `${API_URL}/user/editusername`,
@@ -63,7 +70,16 @@ export default function editprofile({
           newUserName: changeUserName,
         },
         {
-          withCredentials: true, // IMPORTANT!!!
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         }
       )
       .then(function(response) {
@@ -86,7 +102,6 @@ export default function editprofile({
       alert("輸入密碼不一致");
       return;
     }
-    console.log("test");
     axios
       .post(
         `${API_URL}/password/changepassword`,
@@ -95,7 +110,16 @@ export default function editprofile({
           newPassword: newPassword,
         },
         {
-          withCredentials: true, // IMPORTANT!!!
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         }
       )
       .then(function(response) {
@@ -202,9 +226,6 @@ export default function editprofile({
               className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md text-black"
             />
             <div>
-              <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none m-5 text-center">
-                更改
-              </button>
               <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none m-5 text-center">
                 更改
               </button>

@@ -17,8 +17,9 @@ export default function createtagoptions({ navbarOptions }) {
   const [showCaseImageHorizontal, setShowCaseImageHorizontal] = useState("");
   const [showCaseImageVertical, setShowCaseImageVertical] = useState("");
   const [bigTag, setBigTag] = useState("");
-
   const [bigTagOptions, setBigTagoptions] = useState([]);
+  const tokenJWT = Cookies.get("AT");
+
   useEffect(() => {
     async function getTagOptionsAndPostId() {
       const resultsBigTagOptions = await axios(`${API_URL}/bigtagoptions`);
@@ -56,7 +57,16 @@ export default function createtagoptions({ navbarOptions }) {
           bigTag: bigTag,
         },
         {
-          withCredentials: true, // IMPORTANT!!! or Header Bearer Token
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         }
       )
       .then(function(response) {

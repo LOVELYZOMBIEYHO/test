@@ -17,6 +17,7 @@ export default function createcategoryoptions({ navbarOptions }) {
   const [japName, setJapName] = useState("");
   const [showCaseImageHorizontal, setShowCaseImageHorizontal] = useState("");
   const [showCaseImageVertical, setShowCaseImageVertical] = useState("");
+  const tokenJWT = Cookies.get("AT");
 
   useEffect(() => {
     async function getId() {
@@ -48,14 +49,23 @@ export default function createcategoryoptions({ navbarOptions }) {
           showCaseImageVertical: showCaseImageVertical,
         },
         {
-          withCredentials: true, // IMPORTANT!!! or Header Bearer Token
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         }
       )
-      .then(function (response) {
+      .then(function(response) {
         // console.log(response);
         alert(response.data);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         // console.log(error);
         // console.log(error.response.data);
         alert(

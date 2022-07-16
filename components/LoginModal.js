@@ -124,6 +124,7 @@ export default function LoginModal() {
           } else {
             Cookies.set("username", `${response.data[1].username}`);
           }
+          Cookies.set("AT", `${response.data[0].token}`);
           Cookies.set("email", `${response.data[2].email}`);
           localStorage.setItem("icon", `${response.data[3].icon}`);
 

@@ -14,7 +14,7 @@ export default function createtagoptions({ navbarOptions }) {
   const [chiName, setChiName] = useState("");
   const [engName, setEngName] = useState("");
   const [japName, setJapName] = useState("");
-
+  const tokenJWT = Cookies.get("AT");
   useEffect(() => {
     async function getId() {
       const resultsIdCount = await axios(`${API_URL}/bigtagsidcount`);
@@ -40,7 +40,16 @@ export default function createtagoptions({ navbarOptions }) {
           japName: japName,
         },
         {
-          withCredentials: true, // IMPORTANT!!! or Header Bearer Token
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         }
       )
       .then(function(response) {

@@ -37,6 +37,8 @@ export default function createpage({ navbarOptions }) {
   const [value, setValue] = useState("");
   const [tags, setTags] = useState([]);
 
+  const tokenJWT = Cookies.get("AT");
+
   // const [searchTagsArray, setSearchTagsArray] = useState([]);
 
   // Category options from MongoDB
@@ -153,11 +155,16 @@ export default function createpage({ navbarOptions }) {
             tags,
         },
         {
-          withCredentials: true, // IMPORTANT!!! or Header Bearer Token
-          // headers: {
-          //           "Content-Type": "application/json",
-          //           Authorization: `Bearer ${tokenCode}`,
-          //         },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         }
       )
       .then(function(response) {

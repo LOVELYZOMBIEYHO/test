@@ -7,6 +7,7 @@ import { API_URL } from "/config/index";
 const clear_cookies = () => {
   Cookies.remove("username");
   Cookies.remove("email");
+  Cookies.remove("AT");
   localStorage.removeItem("icon");
 
   axios
@@ -14,13 +15,13 @@ const clear_cookies = () => {
       withCredentials: true,
       credentials: "include",
     })
-    .then(function (response) {
+    .then(function(response) {
       console.log(response);
     })
-    .catch(function (error) {
+    .catch(function(error) {
       console.log(error);
     });
-  setTimeout(function () {
+  setTimeout(function() {
     window.location.replace("/login");
   }, 500);
 };
