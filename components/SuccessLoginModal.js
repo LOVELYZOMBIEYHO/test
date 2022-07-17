@@ -72,10 +72,10 @@ export default function SuccessLoginModal({ loginshow, setLoginshow }) {
                     height={40}
                   />
                   <div className="mx-1 w-40">
-                    <h1 className="text-sm font-semibold text-gray-700 dark:text-gray-200 whitespace-nowrap overflow-hidden text-ellipsis">
+                    <h1 className="text-sm font-semibold text-white dark:text-gray-200 whitespace-nowrap overflow-hidden text-ellipsis">
                       {Cookies.get("username")}
                     </h1>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis">
+                    <p className="text-sm text-white dark:text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis">
                       {Cookies.get("email")}
                     </p>
                   </div>
@@ -106,7 +106,7 @@ export default function SuccessLoginModal({ loginshow, setLoginshow }) {
 
                 <a
                   onClick={clear_cookies}
-                  className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
+                  className="block px-4 py-3 text-sm text-white capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer"
                 >
                   登出
                 </a>
