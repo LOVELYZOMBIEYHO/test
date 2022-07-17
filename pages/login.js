@@ -66,9 +66,9 @@ export default function Login({ navbarOptions }) {
           Cookies.set("email", `${response.data[2].email}`);
           localStorage.setItem("icon", `${response.data[3].icon}`);
           // Redirect original page
-          // setTimeout(function() {
-          //   window.location.replace("/");
-          // }, 500);
+          setTimeout(function() {
+            window.location.replace("/");
+          }, 500);
         }
       })
       .catch(function(error) {

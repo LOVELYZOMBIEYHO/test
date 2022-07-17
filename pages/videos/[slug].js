@@ -14,6 +14,8 @@ import axios from "axios";
 // import ReactPlayer from "react-player";
 // prevent Hydration error https://stackoverflow.com/questions/72235211/trying-to-use-react-player-throws-a-hydration-error
 import dynamic from "next/dynamic";
+const utf8 = require("utf8");
+
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 // Only loads the YouTube player

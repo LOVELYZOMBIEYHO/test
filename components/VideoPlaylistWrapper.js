@@ -8,7 +8,7 @@ export default function VideoPlaylistWrapper(evt) {
   return (
     <div>
       {/* <div className="max-w-2xl mx-auto"> */}
-      <div className="p-4 bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <div className="p-4 bg-gray-800 rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <div className="flex justify-between items-center mb-4">
           <Image
             className="w-14 h-14 rounded-full"

@@ -4,11 +4,11 @@
 
 // const { FRONT_URL } = require("./config/index");
 
-const siteUrl = "http://localhost:3000";
+const siteUrl = "https://jseedav.com";
 module.exports = {
   // options
   // siteUrl,
-  siteUrl: process.env.SITE_URL || "http://localhost:3000",
+  siteUrl: process.env.SITE_URL || "https://jseedav.com",
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [

@@ -176,7 +176,7 @@ export default function LoginModal() {
         //  fade in CSS, UseFade from UseFade.module.css (styles)
 
         <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 ${UseFade.fadeInCustom}`}
+          className={`fixed inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 z-20 ${UseFade.fadeInCustom}`}
           //   data-attribute of html (instead of Class)
           data-fadeoutcustom
         >
