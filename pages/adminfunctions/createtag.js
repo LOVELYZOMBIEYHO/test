@@ -16,10 +16,10 @@ export default function createtagoptions({ navbarOptions }) {
   const [japName, setJapName] = useState("");
   const [showCaseImageHorizontal, setShowCaseImageHorizontal] = useState("");
   const [showCaseImageVertical, setShowCaseImageVertical] = useState("");
-  const [bigTag, setBigTag] = useState("");
+  const [bigTag, setBigTag] = useState("影片主題");
   const [bigTagOptions, setBigTagoptions] = useState([]);
   const tokenJWT = Cookies.get("AT");
-
+  console.log(bigTag);
   useEffect(() => {
     async function getTagOptionsAndPostId() {
       const resultsBigTagOptions = await axios(`${API_URL}/bigtagoptions`);
