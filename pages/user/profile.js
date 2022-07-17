@@ -11,7 +11,7 @@ import VideoitemHorizontalWithHover from "@/components/VideoitemHorizontalWithHo
 export default function profile({ categoryOptions, navbarOptions, likePosts }) {
   const router = useRouter();
   let [dataLikePost, setDataLikePost] = useState([]);
-
+  const tokenJWT = Cookies.get("AT");
   // const res = fetch(`${API_URL}/user/profile`, {
   //   method: "GET",
   //   credentials: "include",
@@ -31,8 +31,16 @@ export default function profile({ categoryOptions, navbarOptions, likePosts }) {
     async function checkTokenFunction() {
       const checkToken = axios
         .get(`${API_URL}/user/profile`, {
-          withCredentials: true,
-          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
         })
         .then(function(response) {
           // console.log(response);
@@ -126,8 +134,16 @@ export default function profile({ categoryOptions, navbarOptions, likePosts }) {
   useEffect(() => {
     async function getLikedPosts() {
       const results = await axios(`${API_URL}/user/getlikevideo`, {
-        withCredentials: true,
-        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${tokenJWT}`,
+
+          // access_token_cookie,
+          // Authorization: "Bearer <access_token>"
+
+          // withCredentials: true,
+          // credentials: "include",
+        },
       });
       setDataLikePost(results.data);
     }

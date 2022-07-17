@@ -97,7 +97,7 @@ export default function VideoitemHorizontal({ evt, categoryOptions }) {
             </a>
           </Link>
 
-          <div className={`${styles.playIconContainer} z-50`}>
+          <div className={`${styles.playIconContainer} z-10`}>
             <span className={styles.playIconDivB}>
               <span className={`${styles.timeDuration}`}>
                 {evt.videoDurationHour}
