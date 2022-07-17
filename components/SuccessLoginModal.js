@@ -84,12 +84,12 @@ export default function SuccessLoginModal({ loginshow, setLoginshow }) {
                 <hr className="border-gray-200 dark:border-gray-700 " />
 
                 <Link href="/user/profile">
-                  <a className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                  <a className="block px-4 py-3 text-sm text-white capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                     我的收藏
                   </a>
                 </Link>
                 <Link href="/user/edit">
-                  <a className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                  <a className="block px-4 py-3 text-sm text-white capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                     更改個人資料
                   </a>
                 </Link>
@@ -97,7 +97,7 @@ export default function SuccessLoginModal({ loginshow, setLoginshow }) {
                 <hr className="border-gray-200 dark:border-gray-700 " />
 
                 <Link href="/user/outputlikelist">
-                  <a className="block px-4 py-3 text-sm text-gray-600 capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                  <a className="block px-4 py-3 text-sm text-white capitalize transition-colors duration-200 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                     輸出你喜歡的影片列表
                   </a>
                 </Link>
