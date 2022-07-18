@@ -20,9 +20,9 @@ export default function createpage({ navbarOptions }) {
   const [imageLinkVertical, setImageLinkVertical] = useState("");
   const [imageLinkHorizontal, setImageLinkHorizontal] = useState("");
   const [series, setSeries] = useState("");
-  const [categoryEng, setCategoryEng] = useState("cosplay");
-  const [categoryChi, setCategoryChi] = useState("角色扮演");
-  const [categoryJap, setCategoryJap] = useState("コスプレ");
+  const [categoryEng, setCategoryEng] = useState("uncensored");
+  const [categoryChi, setCategoryChi] = useState("無碼");
+  const [categoryJap, setCategoryJap] = useState("無修正");
 
   const [avcode, setAvcode] = useState("");
   const [companyPublished, setCompanyPublished] = useState("");
