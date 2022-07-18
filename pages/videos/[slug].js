@@ -263,7 +263,8 @@ export async function getStaticProps({ params: { slug } }) {
 // // the path has not been generated.
 export async function getStaticPaths() {
   // this URL is created specifically for fetch first time of ISR
-  const res = await fetch(`${API_URL}/postforisrfirst`);
+  // const res = await fetch(`${API_URL}/postforisrfirst`);
+  const res = await fetch(`${API_URL}/post`);
   const posts = await res.json();
 
   // Get the paths we want to pre-render based on posts
