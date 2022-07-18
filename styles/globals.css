@@ -125,7 +125,6 @@ img {
 
 @media only screen and (max-width: 900px) {
   btnCategoryLabel {
-    font: inherit;
     font-size: 30%;
     border: 0;
     border-radius: 5px;
@@ -144,8 +143,7 @@ img {
 
 @media only screen and (max-width: 500px) {
   .btnCategoryLabel {
-    font: inherit;
-    font-size: 30%;
+    font-size: 20%;
     border: 0;
     border-radius: 5px;
     padding: 5px 15px;
@@ -163,8 +161,7 @@ img {
 
 @media only screen and (max-width: 281px) {
   .btnCategoryLabel {
-    font: inherit;
-    font-size: 20%;
+    font-size: 17%;
     border: 0;
     border-radius: 5px;
     padding: 5px 10px;

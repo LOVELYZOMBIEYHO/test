@@ -65,7 +65,9 @@ import VideoitemHorizontal from "@/components/VideoitemHorizontal";
 import VideoitemHorizontalWithHover from "@/components/VideoitemHorizontalWithHover";
 
 import Showcase from "@/components/Showcase";
+import Seo from "@/components/Seo";
 import Seopage from "@/components/Seopage";
+
 // import Card from "@/components/Card";
 // {API_URI}在 config=> index.js  要使用@ 代表../ 需要開一個檔案 jsconfig.json
 
@@ -89,7 +91,7 @@ export default function hanime({
 
   return (
     <Layout navbarOptions={navbarOptions}>
-      {/* <Seopage /> */}
+      <Seopage />
       <div>
         <br />
         <br />

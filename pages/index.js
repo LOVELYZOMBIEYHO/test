@@ -55,7 +55,7 @@ export default function Home({ posts, navbarOptions, categoryOptions }) {
 
   return (
     <Layout navbarOptions={navbarOptions}>
-      <Seopage />
+      {/* <Seopage /> */}
       <div>
         <br />
         <br />

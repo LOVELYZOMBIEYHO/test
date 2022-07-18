@@ -3,24 +3,31 @@ import { useRouter } from "next/router";
 
 export default function Seo() {
   const router = useRouter();
+  // console.log(router.pathname);
+  // console.log(router.query);
+  // console.log(router.pathname.split("/"));
+  const urlLastSplit = router.pathname.split("/");
+  const urlLastQuery = urlLastSplit[urlLastSplit.length - 1];
+  // console.log(urlLastQuery);
+  // console.log(router);
 
   return (
     <Head>
       {/* Title */}
       {(() => {
-        if (router.pathname === "/") return <title>Hwebsite</title>;
-        if (router.pathname === "/articles") return <title>All Articles</title>;
-        if (router.pathname === "/about") return <title>About Me</title>;
-        if (router.pathname === "/category/web-development")
-          return <title>Web-Development</title>;
-        if (router.pathname === "/category/digital-marketing")
-          return <title>Digital-Marketing</title>;
+        if (router.pathname === "/") return <title>Jseedav</title>;
+        if (urlLastQuery === "[cate]")
+          return <title>{router.query["cate"]}</title>;
+        if (urlLastQuery === "[tags]")
+          return <title>{router.query["tags"]}</title>;
+
+        return <title>{urlLastQuery}</title>;
       })()}
       {/* Description */}
 
       {(() => {
         if (router.pathname === "/")
-          return <meta name="description" content="Hwebsite" />;
+          return <meta name="description" content="Jseedav" />;
         if (router.pathname === "/articles")
           return <meta name="description" content="All Articles" />;
         if (router.pathname === "/about")
@@ -34,7 +41,7 @@ export default function Seo() {
       {/* og:title */}
       {(() => {
         if (router.pathname === "/")
-          return <meta property="og:title" content="Hwebsite" />;
+          return <meta property="og:title" content="Jseedav" />;
         if (router.pathname === "/articles")
           return <meta property="og:title" content="All Articles" />;
         if (router.pathname === "/about")
@@ -48,7 +55,7 @@ export default function Seo() {
       {/* og:description */}
       {(() => {
         if (router.pathname === "/")
-          return <meta property="og:description" content="Hwebsite" />;
+          return <meta property="og:description" content="Jseedav" />;
         if (router.pathname === "/articles")
           return <meta property="og:description" content="All Articles" />;
         if (router.pathname === "/about")
@@ -59,9 +66,19 @@ export default function Seo() {
           return <meta property="og:description" content="Digital Marketing" />;
       })()}
 
-      <meta property="og:url" content={router.pathname} />
-      <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="Hwebsite" />
+      {/* og:url */}
+      {(() => {
+        if (router.pathname === "/videos/search/[tags]")
+          return (
+            <meta
+              property="og:url"
+              content={`/videos/search/${router.query["tags"]}`}
+            />
+          );
+      })()}
+
+      <meta property="og:type" content="video.movie" />
+      <meta property="og:site_name" content="Jseedav" />
       <meta property="og:image" content="/images/showcase.jpg" />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="720" />

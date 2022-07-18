@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }) {
   //   transport: "xhr", // optional, beacon/xhr/image
   // });
 
-  // GTM setting
+  // GTM setting (from Vercel example https://github.com/vercel/next.js/tree/canary/examples/with-google-tag-manager)
   const router = useRouter();
   useEffect(() => {
     router.events.on("routeChangeComplete", pageview);

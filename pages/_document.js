@@ -1,9 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { GTM_ID } from "../lib/gtm";
+
 class MyDocument extends Document {
   render() {
     return (
       <Html>
+        {/* <Seopage /> */}
         <Head>
           {/* test no ssl backend */}
           {/* <meta

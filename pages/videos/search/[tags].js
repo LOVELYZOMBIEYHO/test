@@ -59,6 +59,9 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import VideoitemHorizontalWithHover from "@/components/VideoitemHorizontalWithHover";
+import Seo from "@/components/Seo";
+import Seopage from "@/components/Seopage";
+
 import Head from "next/head";
 // {API_URI}在 config=> index.js  要使用@ 代表../ 需要開一個檔案 jsconfig.json
 import { API_URL } from "@/config/index";
@@ -75,9 +78,7 @@ export default function SearchPageResults({
   // console.log(posts);
   return (
     <Layout navbarOptions={navbarOptions}>
-      <Head>
-        <title>Search Results</title>
-      </Head>
+      <Seopage />
       <div>
         <Link href="/videos">Go Back</Link>
         <br />

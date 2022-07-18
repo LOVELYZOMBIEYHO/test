@@ -60,6 +60,8 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import CategoryShowCase from "@/components/CategoryShowCase";
 import TagShowCase from "@/components/TagShowCase";
+import Seo from "@/components/Seo";
+import Seopage from "@/components/Seopage";
 
 import Head from "next/head";
 // {API_URI}在 config=> index.js  要使用@ 代表../ 需要開一個檔案 jsconfig.json
@@ -80,9 +82,7 @@ export default function SearchPage({
   const searchTerm = router.query;
   return (
     <Layout navbarOptions={navbarOptions}>
-      <Head>
-        <title>Mulitiple Search</title>
-      </Head>
+      <Seopage />
       <br />
       <br />
       <br />

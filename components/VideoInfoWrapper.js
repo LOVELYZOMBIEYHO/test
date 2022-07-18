@@ -286,8 +286,6 @@ export default function VideoInforWrapper({ postId, posts }) {
     countAPIGetViewRequest();
   }, []);
 
-  console.log(viewCount);
-
   return (
     <div className="m-3">
       {/* -------- */}
