@@ -3,17 +3,57 @@
 }
 
 .formBtn {
-  font-size: 15px;
+  font-size: 1.8rem;
 }
 
 .submitBtn {
-  font-size: 15px;
+  font-size: 1.8rem;
 }
 .tagBtn {
-  font-size: 15px;
+  font-size: 1.8rem;
 }
 .filterLabelName {
-  font-size: 17px;
+  font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 1300px) {
+  .formBtnDiv {
+    padding: 13px;
+  }
+
+  .formBtn {
+    /* font-size: 13px; */
+    font-size: 1.5rem;
+  }
+  .submitBtn {
+    font-size: 1.5rem;
+  }
+  .tagBtn {
+    font-size: 1.5rem;
+  }
+  .filterLabelName {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .formBtnDiv {
+    padding: 13px;
+  }
+
+  .formBtn {
+    /* font-size: 13px; */
+    font-size: 1rem;
+  }
+  .submitBtn {
+    font-size: 1rem;
+  }
+  .tagBtn {
+    font-size: 1rem;
+  }
+  .filterLabelName {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -22,6 +62,7 @@
   }
 
   .formBtn {
+    /* font-size: 13px; */
     font-size: 13px;
   }
   .submitBtn {

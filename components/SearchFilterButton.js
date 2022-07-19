@@ -90,8 +90,8 @@ export default function SearchFilterButton({
 
   return (
     <div>
-      <div className="w-full max-w-md px-1 py-1 mx-auto rounded-2xl">
-        <div className="px-5 pt-3 shadow-lg rounded-2xl">
+      <div className="w-full px-1 py-1 mx-auto rounded-2xl">
+        <div className={`${styles.widthDiv} px-5 pt-3 shadow-lg rounded-2xl`}>
           <div className="flex flex-row justify-center">
             <div
               className="flex group"

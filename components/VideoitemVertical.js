@@ -16,8 +16,8 @@ export default function VideoitemVertical({ evt, categoryOptions }) {
                     ? evt.imageLinkVertical
                     : "/images/event-default.png"
                 }
-                width={300}
-                height={400}
+                width={2300}
+                height={2400}
                 alt={evt.titleChinese}
                 className="rounded"
               />
