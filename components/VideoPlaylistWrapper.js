@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function VideoPlaylistWrapper(evt) {
   // console.log(evt.post);
@@ -136,9 +138,9 @@ export default function VideoPlaylistWrapper(evt) {
                         <p className="text-sm font-medium dark:text-white">
                           {evts.titleChinese}
                         </p>
-                        <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+                        {/* <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                           觀看次數
-                        </p>
+                        </p> */}
                       </div>
                       {/* <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                     $320

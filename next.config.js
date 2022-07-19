@@ -73,6 +73,7 @@ module.exports = {
       "cdn.jsdelivr.net",
       "cdn.pixabay.com",
       "webtoolsdepot.com",
+      "video.gumlet.io",
     ],
     // domains: ["strapi-it-blog.herokuapp.com"],
   },

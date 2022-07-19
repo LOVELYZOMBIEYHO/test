@@ -118,12 +118,23 @@ export default function PostPage({ posts, navbarOptions }) {
               <div>
                 <ReactPlayer
                   className="max-w-2xl mx-auto"
-                  url={post.videoLink}
+                  // url={post.videoLink}
+                  url="https://video.gumlet.io/62d62a0175437486ca546bd4/62d62a03c057787d3fdde07d/main.m3u8"
                   width="100%"
                   height={400}
                   controls={true}
                 />
               </div>
+              {/* Gumlet */}
+              <iframe
+                style={{ width: "100%", aspectRatio: 1200 / 675 }}
+                // src="https://api.gumlet.com/v1/video/embed/62d62a03c057787d3fdde07d?autoplay=false&start_high_res=true"
+                src={post.videoLink}
+                title="Gumlet video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
 
               {/* <iframe
                 src="https://drive.google.com/file/d/1SpC6MJLpIlZeG9yxhWyQYgkVjBsGj1NJ/preview"
