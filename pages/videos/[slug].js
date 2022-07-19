@@ -14,7 +14,6 @@ import axios from "axios";
 // import ReactPlayer from "react-player";
 // prevent Hydration error https://stackoverflow.com/questions/72235211/trying-to-use-react-player-throws-a-hydration-error
 import dynamic from "next/dynamic";
-const utf8 = require("utf8");
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -119,7 +118,7 @@ export default function PostPage({ posts, navbarOptions }) {
               <div>
                 <ReactPlayer
                   className="max-w-2xl mx-auto"
-                  url="https://www.youtube-nocookie.com/embed/yC2JQlnmkLI"
+                  url={post.videoLink}
                   width="100%"
                   height={400}
                   controls={true}
