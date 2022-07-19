@@ -17,7 +17,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
           />
-          <script src="https://cdn.tailwindcss.com"></script>
+          {/* <script src="https://cdn.tailwindcss.com"></script> */}
           {/* Google Material Icon */}
           <link
             rel="stylesheet"

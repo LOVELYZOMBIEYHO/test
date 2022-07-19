@@ -118,8 +118,8 @@ export default function PostPage({ posts, navbarOptions }) {
               <div>
                 <ReactPlayer
                   className="max-w-2xl mx-auto"
-                  // url={post.videoLink}
-                  url="https://video.gumlet.io/62d62a0175437486ca546bd4/62d62a03c057787d3fdde07d/main.m3u8"
+                  url={post.videoLink}
+                  // url="https://video.gumlet.io/62d62a0175437486ca546bd4/62d62a03c057787d3fdde07d/main.m3u8"
                   width="100%"
                   height={400}
                   controls={true}

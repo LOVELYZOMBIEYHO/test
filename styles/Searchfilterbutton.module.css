@@ -16,23 +16,23 @@
   font-size: 1.8rem;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1500px) {
   .formBtnDiv {
     padding: 13px;
   }
 
   .formBtn {
     /* font-size: 13px; */
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .submitBtn {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .tagBtn {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .filterLabelName {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 

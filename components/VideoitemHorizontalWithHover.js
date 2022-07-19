@@ -66,26 +66,26 @@ export default function VideoitemHorizontal({ evt, categoryOptions }) {
                 videoSrc={evt.previewVideoLink ? evt.previewVideoLink : ""}
                 className={styles.HoverVideoPlayer}
                 pausedOverlay={
-                  <img
+                  // <img
+                  //   src={evt.imageLinkHorizontal}
+                  //   alt=""
+                  //   style={{
+                  //     // Make the image expand to cover the video's dimensions
+                  //     width: "100%",
+                  //     height: "100%",
+                  //     objectFit: "cover",
+                  //   }}
+
+                  <Image
                     src={evt.imageLinkHorizontal}
-                    alt=""
+                    alt={evt.titleChinese}
+                    layout="fill"
                     style={{
                       // Make the image expand to cover the video's dimensions
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
                     }}
-
-                    // <Image
-                    //   src={evt.imageLinkHorizontal}
-                    //   alt={evt.titleChinese}
-                    //   layout="fill"
-                    //   style={{
-                    //     // Make the image expand to cover the video's dimensions
-                    //     width: "100%",
-                    //     height: "100%",
-                    //     objectFit: "cover",
-                    //   }}
                   />
                 }
                 loadingOverlay={

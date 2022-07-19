@@ -90,7 +90,7 @@ export default function SearchFilterButton({
 
   return (
     <div>
-      <div className="w-full px-1 py-1 mx-auto rounded-2xl">
+      <div className="w-full px-1 py-1 mx-auto rounded-2xl noSelect">
         <div className={`${styles.widthDiv} px-5 pt-3 shadow-lg rounded-2xl`}>
           <div className="flex flex-row justify-center">
             <div
@@ -246,7 +246,7 @@ export default function SearchFilterButton({
       </div>
       {/* ---------- */}
       {showA && (
-        <div className="container mx-auto rounded shadow-lg">
+        <div className="container mx-auto rounded shadow-lg noSelect">
           <span className={`m-3 ${styles.filterLabelName}`}>類別</span>
           <div className="grid grid-cols-3 gap-4 text-center md:grid-cols-5">
             {categoryOptions.map((option) => (
