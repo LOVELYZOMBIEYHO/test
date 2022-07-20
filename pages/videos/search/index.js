@@ -74,13 +74,18 @@ export default function SearchPage({
   categoryOptions,
   navbarOptions,
   tagOptions,
-  shuffleTagArray,
   bigTagOptions,
   bigTagOptionsB,
   bigTagOptionsC,
 }) {
   const router = useRouter();
   const searchTerm = router.query;
+
+  // Shuffle all the tag to show random tag when refresh
+  const [shuffleTagArray, setShuffleTagArray] = useState([]);
+  useEffect(() => {
+    setShuffleTagArray(tagOptions.sort(() => Math.random() - 0.5));
+  }, []);
 
   return (
     <Layout navbarOptions={navbarOptions}>
@@ -162,11 +167,6 @@ export async function getStaticProps() {
   const resTagOptions = await fetch(`${API_URL}/tagoptions`);
   const tagOptions = await resTagOptions.json();
 
-  // Shuffle tag and options for random show
-  const resTagOptionsShuffle = await fetch(`${API_URL}/tagoptions`);
-  const tagOptionsShuffle = await resTagOptionsShuffle.json();
-  const shuffleTagArray = tagOptionsShuffle.sort(() => Math.random() - 0.5);
-
   // Dynamic Big tag
   const resBigTagOptions = await fetch(`${API_URL}/bigtagtotags`);
   const bigTagOptions = await resBigTagOptions.json();
@@ -184,7 +184,6 @@ export async function getStaticProps() {
       categoryOptions,
       navbarOptions,
       tagOptions,
-      shuffleTagArray,
       bigTagOptions,
       bigTagOptionsB,
       bigTagOptionsC,
