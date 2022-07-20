@@ -61,7 +61,7 @@ export default function Home({ posts, navbarOptions, categoryOptions }) {
         <br />
         <br />
 
-        <Showcase />
+        {/* <Showcase /> */}
         <br />
         <div>人氣熱門</div>
         <br />

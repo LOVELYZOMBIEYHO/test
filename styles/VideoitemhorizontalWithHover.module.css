@@ -30,6 +30,8 @@
 .categoryDiv {
   width: 30%;
   float: right;
+  display: table;
+  /* display table for category label stay in right that not over size */
 }
 
 .info {

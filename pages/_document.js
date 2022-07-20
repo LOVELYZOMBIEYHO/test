@@ -4,7 +4,8 @@ import { GTM_ID } from "../lib/gtm";
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      // if eng web change zh to en
+      <Html lang="zh">
         {/* <Seopage /> */}
         <Head>
           {/* test no ssl backend */}

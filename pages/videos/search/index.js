@@ -74,12 +74,14 @@ export default function SearchPage({
   categoryOptions,
   navbarOptions,
   tagOptions,
+  shuffleTagArray,
   bigTagOptions,
   bigTagOptionsB,
   bigTagOptionsC,
 }) {
   const router = useRouter();
   const searchTerm = router.query;
+
   return (
     <Layout navbarOptions={navbarOptions}>
       <Seopage />
@@ -112,7 +114,7 @@ export default function SearchPage({
         ))}
 
         <div>標籤</div>
-        {tagOptions.map((evt) => (
+        {shuffleTagArray.slice(0, 10).map((evt) => (
           <TagShowCase key={Object.values(evt.chiName)} evt={evt} />
         ))}
 
@@ -160,6 +162,11 @@ export async function getStaticProps() {
   const resTagOptions = await fetch(`${API_URL}/tagoptions`);
   const tagOptions = await resTagOptions.json();
 
+  // Shuffle tag and options for random show
+  const resTagOptionsShuffle = await fetch(`${API_URL}/tagoptions`);
+  const tagOptionsShuffle = await resTagOptionsShuffle.json();
+  const shuffleTagArray = tagOptionsShuffle.sort(() => Math.random() - 0.5);
+
   // Dynamic Big tag
   const resBigTagOptions = await fetch(`${API_URL}/bigtagtotags`);
   const bigTagOptions = await resBigTagOptions.json();
@@ -177,6 +184,7 @@ export async function getStaticProps() {
       categoryOptions,
       navbarOptions,
       tagOptions,
+      shuffleTagArray,
       bigTagOptions,
       bigTagOptionsB,
       bigTagOptionsC,

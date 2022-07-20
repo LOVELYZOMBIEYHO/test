@@ -158,7 +158,7 @@ img {
   }
   .btnCategoryLabel a {
     color: #fff !important;
-    font-size: 2vw;
+    font-size: 0.7rem;
   }
 }
 
@@ -176,7 +176,7 @@ img {
   }
   .btnCategoryLabel a {
     color: #fff !important;
-    font-size: 200%;
+    font-size: 3vw;
   }
 }
 
@@ -194,7 +194,7 @@ img {
   }
   .btnCategoryLabel a {
     color: #fff !important;
-    font-size: 200%;
+    font-size: 3.5vw;
     text-align: center;
   }
 }
