@@ -21,7 +21,7 @@ export default function createpage({ navbarOptions }) {
   const [imageLinkHorizontal, setImageLinkHorizontal] = useState("");
   const [series, setSeries] = useState("");
   const [categoryEng, setCategoryEng] = useState("uncensored");
-  const [categoryChi, setCategoryChi] = useState("無碼");
+  const [categoryChi, setCategoryChi] = useState("無碼影片");
   const [categoryJap, setCategoryJap] = useState("無修正");
 
   const [avcode, setAvcode] = useState("");

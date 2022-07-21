@@ -140,13 +140,23 @@ export async function getServerSideProps({ query: { tags } }) {
   const resSearchB = await (
     await fetch(`${API_URL}/multisearch?tags=${tags}`)
   ).json();
+  const resSearchC = await (
+    await fetch(`${API_URL}/singlewordsearch?tags=${tags}`)
+  ).json();
 
   // if (resSearchA.length == 0) {
   //   console.log("true");
   // }
   // const posts = resSearchA;
 
-  const posts = resSearchA.length == 0 ? resSearchB : resSearchA;
+  // const posts = resSearchA.length == 0 ? resSearchB : resSearchA;
+  //  SearchA -> SearchB -> SearchC
+  const posts =
+    resSearchA.length == 0
+      ? resSearchB.length == 0
+        ? resSearchC
+        : resSearchB
+      : resSearchA;
 
   const resCategoryOptions = await fetch(`${API_URL}/categoryoptions`);
   const categoryOptions = await resCategoryOptions.json();
