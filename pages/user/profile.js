@@ -53,7 +53,10 @@ export default function profile({ categoryOptions, navbarOptions, likePosts }) {
             // alert("expire");
             alert("驗證時間已過時，請重新登入");
 
-            router.push("/login");
+            // Redirect original page
+            setTimeout(function() {
+              window.location.replace("/login");
+            }, 500);
           }
         })
         .catch(function(error) {
@@ -61,8 +64,12 @@ export default function profile({ categoryOptions, navbarOptions, likePosts }) {
           // Clear console message if error (prevent show backend)
           // console.clear();
           Cookies.remove("username");
-          router.push("/login");
+
           console.log(error);
+          // Redirect original page
+          setTimeout(function() {
+            window.location.replace("/login");
+          }, 500);
         });
     }
     checkTokenFunction();

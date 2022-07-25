@@ -20,4 +20,6 @@ export const API_URL =
 export const FRONT_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://jseedav.com";
 
-export const revalidateTimeVariable = 120;
+// export const revalidateTimeVariable = 120;
+
+export const revalidateTimeVariable = 1;
