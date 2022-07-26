@@ -90,9 +90,7 @@ export default function VideoInforWrapper({ postId, posts }) {
         .catch(function(error) {
           // console.log(error);
           // console.log(error.response.data);
-          alert(
-            `${error}, "You may try to login again, check the slug or idCount duplication"`
-          );
+          alert(`${error}, "請重新登入"`);
         });
     } else {
       alert("請登入帳戶");

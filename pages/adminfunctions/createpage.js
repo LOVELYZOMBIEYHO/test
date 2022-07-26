@@ -20,9 +20,9 @@ export default function createpage({ navbarOptions }) {
   const [imageLinkVertical, setImageLinkVertical] = useState("");
   const [imageLinkHorizontal, setImageLinkHorizontal] = useState("");
   const [series, setSeries] = useState("");
-  const [categoryEng, setCategoryEng] = useState("uncensored");
-  const [categoryChi, setCategoryChi] = useState("無碼影片");
-  const [categoryJap, setCategoryJap] = useState("無修正");
+  const [categoryEng, setCategoryEng] = useState("JapAV");
+  const [categoryChi, setCategoryChi] = useState("日本AV");
+  const [categoryJap, setCategoryJap] = useState("日本AV");
 
   const [avcode, setAvcode] = useState("");
   const [companyPublished, setCompanyPublished] = useState("");
