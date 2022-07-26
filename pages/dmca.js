@@ -4,9 +4,9 @@ import Seopage from "@/components/Seopage";
 import { revalidateTimeVariable } from "@/config/index";
 import { API_URL } from "@/config/index";
 import Markdown from "markdown-to-jsx";
-import { aboutPageMD } from "../markdowndocuents/aboutPage";
+import { DMCAMD } from "../markdowndocuents/dmca";
 
-export default function about({ navbarOptions }) {
+export default function dmca({ navbarOptions }) {
   return (
     <Layout navbarOptions={navbarOptions}>
       {/* <Seopage /> */}
@@ -14,8 +14,8 @@ export default function about({ navbarOptions }) {
         <br />
         <br />
         <br />
-        <h1 className="text-red-600">關於這個網站</h1>
-        <Markdown options={{ forceBlock: true }}>{aboutPageMD}</Markdown>
+        <h1 className="text-red-600">DMCA Policy</h1>
+        <Markdown options={{ forceBlock: true }}>{DMCAMD}</Markdown>
         {/* <AboutDescription /> */}
       </div>
     </Layout>

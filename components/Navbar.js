@@ -604,9 +604,9 @@ export default function Navbar(navbarOptions) {
                   <a>
                     <Image
                       className="w-14 h-14"
-                      src="/images/website-logo.png"
+                      // src="/images/website-logo.png"
                       // src="https://i.imgur.com/rr8M6Xn.jpg"
-                      // src={navbarOptions.navbarOptions[0].brandIconUrl}
+                      src={navbarOptions.navbarOptions[0].brandIconUrl}
                       width={120}
                       height={50}
                       alt={navbarOptions.navbarOptions[0].brandName}

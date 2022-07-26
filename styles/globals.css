@@ -121,11 +121,13 @@ img {
 
 .btnCategoryLabel:hover {
   opacity: 0.8;
+  text-align: center;
 }
 
 .btnCategoryLabel a {
   color: #fff !important;
   font-size: 1vw;
+  text-align: center;
 }
 
 /* ------Dynamic Like Button  ForVideoInfoWrapper.module */
@@ -153,7 +155,7 @@ img {
     margin: 0px;
     cursor: pointer;
     display: inline-block;
-    text-align: left;
+    text-align: center;
     width: 100%;
   }
   .btnCategoryLabel a {
@@ -171,12 +173,13 @@ img {
     margin: 0px;
     cursor: pointer;
     display: inline-block;
-    text-align: left;
     width: 100%;
+    text-align: center;
   }
   .btnCategoryLabel a {
     color: #fff !important;
     font-size: 3vw;
+    text-align: center;
   }
 }
 
@@ -441,3 +444,4 @@ img {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); */
 }
+/* ------Test footer grid--------------------- */

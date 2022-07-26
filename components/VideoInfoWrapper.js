@@ -90,7 +90,7 @@ export default function VideoInforWrapper({ postId, posts }) {
         .catch(function(error) {
           // console.log(error);
           // console.log(error.response.data);
-          alert(`${error}, "請重新登入"`);
+          alert(`${error}, "登入時效已過，請重新登入"`);
         });
     } else {
       alert("請登入帳戶");
