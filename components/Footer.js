@@ -6,6 +6,7 @@ export default function Footer({ navbarOptions }) {
   return (
     <footer className={Footerstyles.footer}>
       <div className={Footerstyles.one}>
+        <br />
         <Image
           className="w-14 h-14"
           // src="/images/website-logo.png"
@@ -18,11 +19,13 @@ export default function Footer({ navbarOptions }) {
         <p>Copyright &copy; Jseedav 2022</p>
       </div>
       <div className={Footerstyles.two}>
+        <br />
         <p>關於</p>
         <Link href="/about">關於這個網站</Link>
         <div>投放廣告</div>
       </div>
       <div className={Footerstyles.three}>
+        <br />
         <p>服務條款</p>
         <Link href="/dmca">DMCA</Link>
       </div>

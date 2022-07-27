@@ -176,7 +176,7 @@ export default function LoginModal() {
         //  fade in CSS, UseFade from UseFade.module.css (styles)
 
         <div
-          className={`fixed inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto h-full w-full px-4 z-20 ${UseFade.fadeInCustom}`}
+          className={`fixed inset-0 bg-gray-900 bg-opacity-60 h-full w-full z-20 ${UseFade.fadeInCustom}`}
           //   data-attribute of html (instead of Class)
           data-fadeoutcustom
         >
@@ -189,8 +189,8 @@ export default function LoginModal() {
           ></div>
           <div className="relative top-10 mx-auto shadow-lg rounded-md bg-white max-w-md z-50">
             {/* <!-- Modal header --> */}
-            <div className="flex justify-between items-center bg-green-500 text-white text-xl rounded-t-md px-4 py-2">
-              <h3>Modal header</h3>
+            <div className="flex justify-between items-center bg-blue-900 text-white text-xl rounded-t-md px-4 py-2">
+              <h3>登入</h3>
               <button
                 onClick={() => {
                   //   setShow((prev) => !prev);
@@ -207,7 +207,7 @@ export default function LoginModal() {
             >
               <form className="text-center" onSubmit={submitLogin}>
                 <h1 className="font-bold tracking-wider text-3xl mb-8 w-full text-gray-600">
-                  Sign in
+                  登入
                 </h1>
                 <div className="py-2 text-left">
                   <input
@@ -237,17 +237,17 @@ export default function LoginModal() {
                     type="submit"
                     className="border-2 border-gray-100 focus:outline-none bg-purple-600 text-white font-bold tracking-wider block w-full p-2 rounded-lg focus:border-gray-700 hover:bg-purple-700"
                   >
-                    Sign In /登入
+                    登入
                   </button>
                 </div>
               </form>
               <div className="text-center">
                 <Link href="/password/reset">
-                  <a className=" hover:underline">Forgot password?</a>
+                  <a className=" hover:underline">忘記密碼?</a>
                 </Link>
               </div>
               <div className="text-center mt-12">
-                <span>Don't have an account?</span>
+                <span>還沒有帳戶?</span>
                 <Link href="/register">
                   <a
                     className="font-light text-md text-indigo-600 underline font-semibold hover:text-indigo-800"
@@ -256,7 +256,7 @@ export default function LoginModal() {
                       fadeOutAni();
                     }}
                   >
-                    Create One
+                    創建帳戶
                   </a>
                 </Link>
               </div>

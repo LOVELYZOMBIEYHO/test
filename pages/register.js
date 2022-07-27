@@ -55,8 +55,11 @@ export default function register({ navbarOptions }) {
           <div className="rounded-lg sm:border-2 px-4 lg:px-24 py-16 lg:max-w-xl sm:max-w-md w-full text-center">
             <form className="text-center" onSubmit={submitRegister}>
               <h1 className="font-bold tracking-wider text-3xl mb-8 w-full text-gray-600">
-                Sign up
+                註冊帳戶
               </h1>
+              <h2 className="text-sm">
+                註冊帳戶可收藏影片，及輸出你喜歡影片的資訊
+              </h2>
               <div className="py-2 text-left text-black">
                 <input
                   type="text"
@@ -65,7 +68,7 @@ export default function register({ navbarOptions }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="bg-gray-200 border-2 border-gray-100 focus:outline-none bg-gray-100 block w-full py-2 px-4 rounded-lg focus:border-gray-700 "
-                  placeholder="Email"
+                  placeholder="電郵地址"
                 />
               </div>
               {/* <div className="py-2 text-left">
@@ -88,7 +91,7 @@ export default function register({ navbarOptions }) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="bg-gray-200 border-2 border-gray-100 focus:outline-none bg-gray-100 block w-full py-2 px-4 rounded-lg focus:border-gray-700 "
-                  placeholder="Password"
+                  placeholder="密碼"
                 />
               </div>
               <div className="py-2 text-left text-black">
@@ -100,7 +103,7 @@ export default function register({ navbarOptions }) {
                   value={passwordconfirm}
                   onChange={(e) => setPasswordconfirm(e.target.value)}
                   className="bg-gray-200 border-2 border-gray-100 focus:outline-none bg-gray-100 block w-full py-2 px-4 rounded-lg focus:border-gray-700 "
-                  placeholder="Password Confirm"
+                  placeholder="確認密碼"
                 />
               </div>
               <div className="py-2">
@@ -108,7 +111,7 @@ export default function register({ navbarOptions }) {
                   type="submit"
                   className="border-2 border-gray-100 focus:outline-none bg-purple-600 text-white font-bold tracking-wider block w-full p-2 rounded-lg focus:border-gray-700 hover:bg-purple-700"
                 >
-                  Sign Up /注册
+                  註冊
                 </button>
               </div>
             </form>
@@ -118,10 +121,10 @@ export default function register({ navbarOptions }) {
               </a> */}
             </div>
             <div className="text-center mt-12">
-              <span>Already have an account?</span>
+              <span>你已經有帳戶?</span>
               <Link href="/login">
                 <a className=" font-light text-md text-indigo-600 underline font-semibold hover:text-indigo-800">
-                  Login
+                  登入
                 </a>
               </Link>
             </div>

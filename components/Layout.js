@@ -21,6 +21,10 @@ export default function Layout({ keywords, children, navbarOptions }) {
       <Header navbarOptions={navbarOptions} />
       {/* {router.pathname === "/" && <Showcase />} */}
       <div>{children}</div>
+      {/* Divide footer and content body */}
+      <br />
+      <br />
+      <br />
       <Footer navbarOptions={navbarOptions} />
     </div>
   );
