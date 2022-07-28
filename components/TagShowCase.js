@@ -16,7 +16,7 @@ export default function CategoryShowCase({ evt }) {
             className="rounded"
           />
 
-          <Link href={`/videos/search/${evt.chiName}`}>
+          {/* <Link href={`/videos/search/${evt.chiName}`}>
             <a>
               <div className={styles.playIconContainer}>
                 <span className={styles.cateAndTagsShowCaseDiv}>
@@ -27,9 +27,20 @@ export default function CategoryShowCase({ evt }) {
                     {evt.cateCountVideosQuantity}部影片
                   </span>
                 </span>
-                {/* ---------- */}
-
-                {/* ------------ */}
+              </div>
+            </a>
+          </Link> */}
+          <Link href={`/tag/${evt.chiName}`}>
+            <a>
+              <div className={styles.playIconContainer}>
+                <span className={styles.cateAndTagsShowCaseDiv}>
+                  <span className={`${styles.cateAndTagsName}`}>
+                    {evt.chiName}
+                  </span>
+                  <span className={`${styles.howManyVideosSpan}`}>
+                    {evt.cateCountVideosQuantity}部影片
+                  </span>
+                </span>
               </div>
             </a>
           </Link>

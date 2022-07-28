@@ -74,20 +74,21 @@ import Seopage from "@/components/Seopage";
 import { API_URL } from "@/config/index";
 import { useEffect, useState } from "react";
 
-export default function catefindposts({
+export default function tagfindposts({
   posts,
-  cate,
+  tag,
+  // cate,
   categoryOptions,
   navbarOptions,
 }) {
-  const [cateChiName, setCateChiName] = useState("");
-  useEffect(() => {
-    for (let i = 0; i < categoryOptions.length; i++) {
-      if (categoryOptions[i].label == cate) {
-        setCateChiName(categoryOptions[i].chiName);
-      }
-    }
-  }, []);
+  // const [cateChiName, setCateChiName] = useState("");
+  // useEffect(() => {
+  //   for (let i = 0; i < categoryOptions.length; i++) {
+  //     if (categoryOptions[i].label == cate) {
+  //       setCateChiName(categoryOptions[i].chiName);
+  //     }
+  //   }
+  // }, []);
 
   return (
     <Layout navbarOptions={navbarOptions}>
@@ -97,10 +98,10 @@ export default function catefindposts({
         <br />
         <br />
 
-        <h1 className="text-center text-blue-300">{`${cateChiName}`}</h1>
+        <h1 className="text-center text-blue-300">{`${tag}`}</h1>
 
         {posts.length === 0 && (
-          <h3 className="text-center">{`沒有 ${cate} 類別顯示`}</h3>
+          <h3 className="text-center">{`沒有 ${tag} 標籤顯示`}</h3>
         )}
         <div>
           {posts.map((evt) => (
@@ -121,8 +122,8 @@ export default function catefindposts({
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
-export async function getStaticProps({ params: { cate } }) {
-  const res = await fetch(`${API_URL}/category/${cate}`);
+export async function getStaticProps({ params: { tag } }) {
+  const res = await fetch(`${API_URL}/tag/${tag}`);
   const posts = await res.json();
 
   const resCategoryOptions = await fetch(`${API_URL}/categoryoptions`);
@@ -134,7 +135,7 @@ export async function getStaticProps({ params: { cate } }) {
   return {
     props: {
       posts,
-      cate,
+      tag,
       categoryOptions,
       navbarOptions,
     },
@@ -181,12 +182,12 @@ export async function getStaticProps({ params: { cate } }) {
 // }
 // ------Correct2 for not too much conflict with dynamic sitemap--------
 export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/categoryforisrfirst`);
-  const categorys = await res.json();
+  const res = await fetch(`${API_URL}/tagforisrfirst`);
+  const tags = await res.json();
 
   // Get the paths we want to pre-render based on posts
-  const paths = categorys.map((category) => ({
-    params: { cate: category.engName },
+  const paths = tags.map((tag) => ({
+    params: { tag: tag.chiName },
   }));
 
   // We'll pre-render only these paths at build time.
