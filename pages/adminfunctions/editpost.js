@@ -1,3 +1,101 @@
+// import { useEffect, useState } from "react";
+// import Layout from "@/components/Layout";
+// import TagsInput from "@/components/TagsInput";
+// import { API_URL } from "/config/index";
+// import { revalidateTimeVariable } from "@/config/index";
+// import Cookies from "js-cookie";
+// import axios from "axios";
+// import format from "format-duration";
+
+// export default function editpost({ navbarOptions }) {
+//   const tokenJWT = Cookies.get("AT");
+
+//   const [slugCheck, setSlugCheck] = useState("");
+//   const submitSlugChange = (e) => {
+//     e.preventDefault();
+//     axios
+//       .get(
+//         `${API_URL}/post/${slugCheck}`,
+
+//         {
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${tokenJWT}`,
+
+//             // access_token_cookie,
+//             // Authorization: "Bearer <access_token>"
+
+//             // withCredentials: true,
+//             // credentials: "include",
+//           },
+//         }
+//       )
+//       .then(function(response) {
+//         // console.log(response);
+//         console.log(response.data[0]);
+//       })
+//       .catch(function(error) {
+//         // console.log(error);
+//         // console.log(error.response.data);
+//         alert(
+//           `${error}, "You may try to login again, check the slug or idCount duplication"`
+//         );
+//       });
+//   };
+//   return (
+//     <Layout navbarOptions={navbarOptions}>
+//       {/* <!-- component --> */}
+//       <br />
+//       <br />
+//   <div className="flex items-center justify-center p-12 bg-white text-black">
+//     <div className="mx-auto w-full max-w-[550px]">
+//       <form onSubmit={submitSlugChange}>
+//         <h1 className="text-center">修改影片</h1>
+//         <div className="mb-5">
+//           <label htmlFor="slug">Slug</label>
+//           <br />
+//           <input
+//             required="required"
+//             type="text"
+//             id="slug"
+//             value={slug}
+//             placeholder="slug"
+//             onChange={(e) => setSlug(e.target.value)}
+//             className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
+//           />
+//         </div>
+
+//         <div>
+//           <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
+//             Submit
+//           </button>
+//         </div>
+//       </form>
+//     </div>
+//   </div>
+//     </Layout>
+//   );
+// }
+
+// export async function getStaticProps() {
+//   // // Dynamic category colorKey and options
+//   // const resCategoryOptions = await fetch(`${API_URL}/categoryoptions`);
+//   // const categoryOptions = await resCategoryOptions.json();
+
+//   // Dynamic navbar options
+//   const resNavbarOptions = await fetch(`${API_URL}/navbardynamic`);
+//   const navbarOptions = await resNavbarOptions.json();
+//   return {
+//     props: {
+//       // categoryOptions,
+//       navbarOptions,
+//     },
+//     // Please change config -> index.js option, it needs to be changed to Int
+//     revalidate: parseInt(revalidateTimeVariable), // In seconds
+//   };
+// }
+// -----------------------------------------
+
 import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import TagsInput from "@/components/TagsInput";
@@ -40,12 +138,6 @@ export default function createpage({ navbarOptions }) {
 
   const tokenJWT = Cookies.get("AT");
 
-  // const [searchTagsArray, setSearchTagsArray] = useState([]);
-
-  // Category options from MongoDB
-  // const [categoryOptionsEng, setCategoryoptionsEng] = useState([]);
-  // const [categoryOptionsChi, setCategoryoptionsChi] = useState([]);
-  // const [categoryOptionsJap, setCategoryoptionsJap] = useState([]);
   const [categoryOptions, setCategoryoptions] = useState([]);
   useEffect(() => {
     async function getCategoryOptionsAndPostId() {
@@ -63,41 +155,15 @@ export default function createpage({ navbarOptions }) {
     getCategoryOptionsAndPostId();
   }, []);
 
-  // ---------Get category options by hard code, not use database-----------------------------------------------------
-  // // Need to add ID to avoid error: Each child in a list should have a unique "key" prop.
-  // const categoryOptions = [
-  //   {
-  //     label: "cosplay",
-  //     id: "1",
-  //     value: "cosplay",
-  //   },
-
-  //   {
-  //     label: "hanime",
-  //     id: "2",
-  //     value: "hanime",
-  //   },
-  // ];
-  // --------------------------------------------------------------
   const submitApplication = (e) => {
     e.preventDefault();
 
     // Date time function
     const date = new Date();
-    // const [month, day, year] = [
-    //   date.getMonth(),
-    //   date.getDate(),
-    //   date.getFullYear(),
-    // ];
-    // const [hour, minutes, seconds] = [
-    //   date.getHours(),
-    //   date.getMinutes(),
-    //   date.getSeconds(),
-    // ];
 
     axios
       .post(
-        `${API_URL}/post`,
+        `${API_URL}/editpost`,
         {
           titleChinese: titleChinese,
           titleJapanese: titleJapanese,
@@ -128,20 +194,6 @@ export default function createpage({ navbarOptions }) {
           tags: tags,
           addedDate: date,
           viewCount: parseInt(0),
-          // searchTags: [
-          //   titleChinese,
-          //   titleJapanese,
-          //   titleEnglish,
-          //   slug,
-          //   series,
-          //   categoryChi,
-          //   categoryEng,
-          //   categoryJap,
-          //   avcode,
-          //   companyPublished,
-          //   actress,
-          //   tags,
-          // ],
 
           searchTagsBigram:
             titleChinese +
@@ -161,12 +213,6 @@ export default function createpage({ navbarOptions }) {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${tokenJWT}`,
-
-            // access_token_cookie,
-            // Authorization: "Bearer <access_token>"
-
-            // withCredentials: true,
-            // credentials: "include",
           },
         }
       )
@@ -182,9 +228,94 @@ export default function createpage({ navbarOptions }) {
         );
       });
   };
+
+  const [slugCheck, setSlugCheck] = useState("");
+  const submitSlugChange = (e) => {
+    e.preventDefault();
+    axios
+      .get(
+        `${API_URL}/post/${slugCheck}`,
+
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${tokenJWT}`,
+
+            // access_token_cookie,
+            // Authorization: "Bearer <access_token>"
+
+            // withCredentials: true,
+            // credentials: "include",
+          },
+        }
+      )
+      .then(function(response) {
+        // console.log(response);
+        console.log(response.data[0]);
+        let postData = response.data[0];
+        setTitleChinese(postData.titleChinese);
+        setTitleJapanese(postData.titleJapanese);
+        setTitleEnglish(postData.titleEnglish);
+        setDescriptionChi(postData.descriptionChi);
+        setDescriptionJap(postData.descriptionJap);
+        setDescriptionEng(postData.descriptionEng);
+        setVideoLink(postData.videoLink);
+        setPreviewVideoLink(postData.previewVideoLink);
+        setSlug(postData.slug);
+        setImageLinkVertical(postData.imageLinkVertical);
+        setImageLinkHorizontal(postData.imageLinkHorizontal);
+        setSeries(postData.series);
+        setCategoryChi(postData.category.categoryChi);
+        setCategoryEng(postData.category.categoryEng);
+        setCategoryJap(postData.category.categoryJap);
+        setAvcode(postData.avcode);
+        setCompanyPublished(postData.companyPublished);
+        setActress(postData.actress);
+        setIdCount(postData.idCount);
+        setOfficialPublishedDate(postData.officialPublishedDate);
+        setVideoDuration(postData.videoDurationForCompare);
+        setTags(postData.tags);
+      })
+      .catch(function(error) {
+        // console.log(error);
+        // console.log(error.response.data);
+        alert(
+          `${error}, "You may try to login again, check the slug or idCount duplication"`
+        );
+      });
+  };
+
   return (
     <Layout navbarOptions={navbarOptions}>
       {/* <!-- component --> */}
+      <br />
+      <br />
+      <div className="flex items-center justify-center p-12 bg-white text-black">
+        <div className="mx-auto w-full max-w-[550px]">
+          <form onSubmit={submitSlugChange}>
+            <h1 className="text-center">修改影片</h1>
+            <div className="mb-5">
+              <label htmlFor="slug check">Slug Check</label>
+              <br />
+              <input
+                required="required"
+                type="text"
+                id="slug"
+                value={slugCheck}
+                placeholder="slugCheck"
+                onChange={(e) => setSlugCheck(e.target.value)}
+                className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
+            </div>
+
+            <div>
+              <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
       <br />
       <br />
       <div className="flex items-center justify-center p-12 bg-white text-black">

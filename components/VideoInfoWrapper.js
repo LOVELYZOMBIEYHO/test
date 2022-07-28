@@ -336,7 +336,7 @@ export default function VideoInforWrapper({ postId, posts }) {
             <button>SUBSCRIBE</button>
           </div>
         </div> */}
-        <p className="summary">{posts[0].description}</p>
+        <p className="summary">{posts[0].descriptionChi}</p>
         <hr className="info-divider" />
       </div>
 
