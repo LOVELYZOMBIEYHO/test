@@ -27,7 +27,7 @@ import { FRONT_URL } from "@/config/index";
 
 export const getServerSideProps = async (ctx) => {
   // Method to source urls from backend
-  const resPosts = await fetch(`${API_URL}/post`);
+  const resPosts = await fetch(`${API_URL}/sitemappostslug`);
   const posts = await resPosts.json();
 
   const fields = posts.map((post) => ({
