@@ -28,7 +28,7 @@ import { FRONT_URL } from "@/config/index";
 export const getServerSideProps = async (ctx) => {
   // Method to source urls from backend
 
-  const resCategorys = await fetch(`${API_URL}/categoryoptions`);
+  const resCategorys = await fetch(`${API_URL}/sitemapcategorieseng`);
   const categorys = await resCategorys.json();
 
   const fields = categorys.map((category) => ({

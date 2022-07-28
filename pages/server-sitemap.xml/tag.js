@@ -8,7 +8,7 @@ import { FRONT_URL } from "@/config/index";
 export const getServerSideProps = async (ctx) => {
   // Method to source urls from backend
 
-  const resTags = await fetch(`${API_URL}/tagoptions`);
+  const resTags = await fetch(`${API_URL}/sitemaptagschi`);
   const tags = await resTags.json();
   // tag 用中交名，category用英文名
   const fields = tags.map((tag) => ({
