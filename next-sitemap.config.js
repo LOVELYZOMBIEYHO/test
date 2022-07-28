@@ -12,7 +12,8 @@ module.exports = {
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
-      { userAgent: "*", disallow: "/adminfunctions/*" },
+      { userAgent: "*", disallow: ["/adminfunctions/*", "/test/*"] },
+      // { userAgent: "*", disallow: "/test/*" },
       { userAgent: "*", allow: "/" },
     ],
     additionalSitemaps: [

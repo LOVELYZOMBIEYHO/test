@@ -321,7 +321,7 @@ export default function createpage({ navbarOptions }) {
       <div className="flex items-center justify-center p-12 bg-white text-black">
         <div className="mx-auto w-full max-w-[550px]">
           <form onSubmit={submitApplication}>
-            <h1 className="text-center">建立影片</h1>
+            <h1 className="text-center">修改影片</h1>
 
             <div className="mb-5">
               <label htmlFor="TitleChinese">Title Chinese</label>
