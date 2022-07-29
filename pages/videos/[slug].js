@@ -147,7 +147,7 @@ export default function PostPage({ posts, navbarOptions }) {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3">
             <div className="text-center col-span-2 ...">
-              {/* <div>
+              <div>
                 <ReactPlayer
                   className="max-w-2xl mx-auto"
                   url={post.videoLink}
@@ -156,13 +156,13 @@ export default function PostPage({ posts, navbarOptions }) {
                   height={400}
                   controls={true}
                 />
-              </div> */}
+              </div>
               {/* Gumlet */}
               <iframe
                 style={{ width: "100%", aspectRatio: 1200 / 675 }}
                 // src="https://api.gumlet.com/v1/video/embed/62d62a03c057787d3fdde07d?autoplay=false&start_high_res=true"
                 src={post.videoLink}
-                title="Gumlet video player"
+                title={post.titleChinese}
                 frameBorder="0"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
