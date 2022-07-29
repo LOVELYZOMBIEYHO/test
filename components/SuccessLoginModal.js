@@ -3,10 +3,15 @@ import UseFade from "@/styles/UseFade.module.css";
 import Image from "next/image";
 import styles from "@/styles/SuccessLoginModal.module.css";
 import Cookies from "js-cookie";
-import { clear_cookies } from "api/logoutfunction";
+// import { clear_cookies } from "api/logoutfunction";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import axios from "axios";
+import { API_URL } from "/config/index";
 
 export default function SuccessLoginModal({ loginshow, setLoginshow }) {
+  const router = useRouter();
+
   //   Fade out animation
   const fadeOutAni = () => {
     //   data-attribute of html (instead of Class)
@@ -29,6 +34,33 @@ export default function SuccessLoginModal({ loginshow, setLoginshow }) {
   useEffect(() => {
     setIcon(localStorage.getItem("icon"));
   }, [icon]);
+
+  // Logut Function
+
+  const clear_cookies = () => {
+    Cookies.remove("username");
+    Cookies.remove("email");
+    Cookies.remove("AT");
+    localStorage.removeItem("icon");
+
+    const logoutRedirectPreviousUrl = router.asPath;
+
+    axios
+      .get(`${API_URL}/logout`, {
+        withCredentials: true,
+        credentials: "include",
+      })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    setTimeout(function() {
+      window.location.replace(`${logoutRedirectPreviousUrl}`);
+    }, 500);
+  };
+
   return (
     <div>
       <div className="flex justify-center">

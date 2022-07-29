@@ -67,6 +67,8 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useRouter } from "next/router";
+
 // logout function
 import { clear_cookies } from "api/logoutfunction";
 
@@ -76,6 +78,9 @@ import SuccessLoginModal from "./SuccessLoginModal";
 import styles from "@/styles/LoginModal.module.css";
 
 export default function LoginModal() {
+  const router = useRouter();
+  const loginRedirectPreviousUrl = router.asPath;
+
   const [show, setShow] = useState(false);
   const [loginshow, setLoginshow] = useState(false);
 
@@ -130,7 +135,7 @@ export default function LoginModal() {
 
           // Redirect original page
           setTimeout(function() {
-            window.location.replace("/");
+            window.location.replace(`${loginRedirectPreviousUrl}`);
           }, 500);
         }
       })

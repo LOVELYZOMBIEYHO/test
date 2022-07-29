@@ -1,6 +1,7 @@
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import VideoPlaylistWrapper from "@/components/VideoPlaylistWrapper";
@@ -25,6 +26,11 @@ import Seo from "@/components/Seo";
 import Seopage from "@/components/Seopage";
 
 import countapi from "countapi-js";
+
+import VideoComment from "@/components/VideoComment";
+import BtnSwitchComment from "@/components/BtnSwitchComment";
+// import CommentTypeBlock from "@/components/CommentTypeBlock";
+import VideoRelatedDiv from "@/components/VideoRelatedDiv";
 
 export default function PostPage({ posts, navbarOptions }) {
   // //useRouter for check my url query
@@ -75,6 +81,32 @@ export default function PostPage({ posts, navbarOptions }) {
   const MyParagraph = ({ children, ...props }) => (
     <div {...props}>{children}</div>
   );
+  // ---------Dynamic show comment block in different place based on width--------------------
+
+  // assign a number(any number is ok)
+  const [isDesktop, setDesktop] = useState(null);
+
+  // const updateMedia = () => {
+  //   setDesktop(window.innerWidth > 650);
+  // };
+  const updateMedia = () => {
+    setDesktop(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    // console.log("width", window.innerWidth);
+    // console.log(isDesktop);
+    setDesktop(window.innerWidth);
+    // return () => setDesktop(window.innerWidth);
+    return () => window.removeEventListener("resize", updateMedia);
+  }, []);
+  // --------------------------------------
+
+  // -------Switch Comment------
+  const [switchRelatedVideos, setSwitchRelatedVideos] = useState(true);
+  const [switchComment, setSwitchComment] = useState(false);
+
   return (
     <Layout navbarOptions={navbarOptions}>
       <Seo evt={posts} />
@@ -144,6 +176,35 @@ export default function PostPage({ posts, navbarOptions }) {
               ></iframe> */}
 
               <VideoInfoWrapper postId={postId} posts={posts} />
+              {/* --------Dynamic show comment block in different place based on width------------ */}
+
+              {(() => {
+                if (isDesktop > 1023) {
+                  return (
+                    <div>
+                      <BtnSwitchComment
+                        switchRelatedVideos={switchRelatedVideos}
+                        setSwitchRelatedVideos={setSwitchRelatedVideos}
+                        switchComment={switchComment}
+                        setSwitchComment={setSwitchComment}
+                      />
+
+                      {switchRelatedVideos ? <VideoRelatedDiv /> : ""}
+
+                      {switchComment ? (
+                        <div>
+                          {/* <CommentTypeBlock /> */}
+                          <VideoComment />
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  );
+                } else if (isDesktop <= 1023) {
+                  return <></>;
+                }
+              })()}
             </div>
 
             {/* <div className="text-center ...">05</div> */}
@@ -156,8 +217,37 @@ export default function PostPage({ posts, navbarOptions }) {
           </div>
         </div>
       </div>
+      {/* --------Dynamic show comment block in different place based on width------------ */}
+
+      {/* {isDesktop ? <div></div> : <VideoRelatedComment />} */}
+      {(() => {
+        if (isDesktop > 1023) {
+          return <></>;
+        } else if (isDesktop <= 1023) {
+          return (
+            <div>
+              <BtnSwitchComment
+                switchRelatedVideos={switchRelatedVideos}
+                setSwitchRelatedVideos={setSwitchRelatedVideos}
+                switchComment={switchComment}
+                setSwitchComment={setSwitchComment}
+              />
+              {switchRelatedVideos ? <VideoRelatedDiv /> : ""}
+              {switchComment ? (
+                <div>
+                  {/* <CommentTypeBlock /> */}
+                  <VideoComment />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          );
+        }
+      })()}
       {/* ----------------------------------------------------- */}
-      <br />
+
+      {/* <br />
       <br />
       <br />
       <br />
@@ -206,7 +296,7 @@ export default function PostPage({ posts, navbarOptions }) {
             4
           </div>
         </div>
-      </div>
+      </div> */}
       {/* -------- */}
       {/* ---------- */}
     </Layout>
