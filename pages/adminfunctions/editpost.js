@@ -192,7 +192,8 @@ export default function createpage({ navbarOptions }) {
           videoDurationHour: format(parseInt(videoDuration)),
           videoDurationForCompare: parseInt(videoDuration),
           tags: tags,
-          addedDate: date,
+          // Dont replace addedDate when edit or update
+          // addedDate: date,
           viewCount: parseInt(0),
 
           searchTagsBigram:
