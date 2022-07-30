@@ -107,6 +107,7 @@ export default function PostPage({ posts, navbarOptions }) {
   const [switchRelatedVideos, setSwitchRelatedVideos] = useState(true);
   const [switchComment, setSwitchComment] = useState(false);
 
+  console.log(posts[0].idCount);
   return (
     <Layout navbarOptions={navbarOptions}>
       <Seo evt={posts} />

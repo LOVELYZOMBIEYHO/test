@@ -28,7 +28,7 @@ export default function VideoitemHorizontal({ evt, categoryOptions }) {
         const resp = await axios.get(
           `https://api.countapi.xyz/get/jseedav.com/:PATHNAME:${evt.idCount}`
         );
-        // console.log(resp.data.value);
+        console.log(resp.data.value);
         setViewCount((prevState) => ({
           ...prevState,
           [evt.idCount]: resp.data.value,
@@ -41,7 +41,6 @@ export default function VideoitemHorizontal({ evt, categoryOptions }) {
 
     countAPIGetViewRequest();
   }, []);
-
   return (
     <div className={styles.event}>
       <div className={styles.hoverDiv}>
@@ -124,9 +123,15 @@ export default function VideoitemHorizontal({ evt, categoryOptions }) {
             <span className={styles.playIconDivE}>
               <span className={`${styles.pageViewCountText}`}>
                 {/* {`${viewCount[evt.idCount]}次`} */}
-                {viewCount[evt.idCount] > 10000
+                {viewCount[evt.idCount] == undefined
+                  ? "0次"
+                  : viewCount[evt.idCount] > 10000
                   ? `${viewCount[evt.idCount] / 10000}萬次`
                   : `${viewCount[evt.idCount]}次`}
+
+                {/* {viewCount[evt.idCount] > 10000
+                  ? `${viewCount[evt.idCount] / 10000}萬次`
+                  : `${viewCount[evt.idCount]}次`} */}
               </span>
             </span>
 
