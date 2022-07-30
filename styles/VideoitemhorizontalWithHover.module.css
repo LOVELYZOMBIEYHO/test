@@ -30,7 +30,8 @@
 .categoryDiv {
   width: 30%;
   float: right;
-  display: table;
+  display: contents;
+
   /* display table for category label stay in right that not over size */
 }
 
@@ -408,5 +409,6 @@ span.playIcon {
   .categoryDiv {
     width: 40%;
     float: right;
+    display: block;
   }
 }
