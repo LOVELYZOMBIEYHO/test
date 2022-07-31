@@ -147,7 +147,9 @@ export default function Home({ posts, navbarOptions, categoryOptions }) {
 
 export async function getStaticProps() {
   // Call an external API endpoint to get posts
-  const res = await fetch(`${API_URL}/post`);
+  // const res = await fetch(`${API_URL}/post`);
+  // Limit to 10 posts for better performance
+  const res = await fetch(`${API_URL}/latestposts`);
   const posts = await res.json();
 
   const resCategoryOptions = await fetch(`${API_URL}/categoryoptions`);

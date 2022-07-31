@@ -107,7 +107,7 @@ export default function PostPage({ posts, navbarOptions }) {
   const [switchRelatedVideos, setSwitchRelatedVideos] = useState(true);
   const [switchComment, setSwitchComment] = useState(false);
 
-  console.log(posts[0].idCount);
+  // console.log(posts[0].idCount);
   return (
     <Layout navbarOptions={navbarOptions}>
       <Seo evt={posts} />
@@ -167,19 +167,20 @@ export default function PostPage({ posts, navbarOptions }) {
                 frameBorder="0"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                // sandbox="allow-forms allow-scripts allow-same-origin"
               ></iframe>
-              {/* ------ */}
 
+              <br />
+
+              {/* ------ */}
               {/* <iframe
                 src="https://drive.google.com/file/d/1SpC6MJLpIlZeG9yxhWyQYgkVjBsGj1NJ/preview"
                 width="700"
                 height="480"
                 allow="autoplay"
               ></iframe> */}
-
               <VideoInfoWrapper postId={postId} posts={posts} />
               {/* --------Dynamic show comment block in different place based on width------------ */}
-
               {(() => {
                 if (isDesktop > 1023) {
                   return (
@@ -328,7 +329,7 @@ export default function PostPage({ posts, navbarOptions }) {
 export async function getStaticProps({ params: { slug } }) {
   const res = await fetch(`${API_URL}/post/${slug}`);
   const posts = await res.json();
-  console.log(slug);
+
   // Dynamic category colorKey and options
   const resCategoryOptions = await fetch(`${API_URL}/categoryoptions`);
   const categoryOptions = await resCategoryOptions.json();

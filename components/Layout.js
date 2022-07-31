@@ -14,9 +14,9 @@ export default function Layout({ keywords, children, navbarOptions }) {
 
   return (
     <div>
-      <Head>
+      {/* <Head>
         <meta name="keywords" content={keywords} />
-      </Head>
+      </Head> */}
       {router.pathname === "/videos/[slug]" ? "" : <Seopage />}
       <Header navbarOptions={navbarOptions} />
       {/* {router.pathname === "/" && <Showcase />} */}
@@ -30,6 +30,6 @@ export default function Layout({ keywords, children, navbarOptions }) {
   );
 }
 
-Layout.defaultProps = {
-  keywords: "Hanime, HCosplay, Anime, Cosplay",
-};
+// Layout.defaultProps = {
+//   keywords: "Jav,Japanese Av, Av, Japanese Adult movies, Adult movies, Jseedav, Jseedav.com, 日本",
+// };

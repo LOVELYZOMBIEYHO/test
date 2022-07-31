@@ -8,18 +8,21 @@ export default function Seo() {
   // console.log(router.pathname.split("/"));
   const urlLastSplit = router.pathname.split("/");
   const urlLastQuery = urlLastSplit[urlLastSplit.length - 1];
+
+  const siteName = "Jseedav.com | 海量高清AV無限看 |";
+
   // console.log(urlLastQuery);
-  // console.log(router);
+  // console.log(router.query["tag"]);
 
   return (
     <Head>
       {/* Title */}
       {(() => {
-        if (router.pathname === "/") return <title>Jseedav</title>;
+        if (router.pathname === "/") return <title>{siteName}</title>;
         if (urlLastQuery === "[cate]")
           return <title>{router.query["cate"]}</title>;
-        if (urlLastQuery === "[tags]")
-          return <title>{router.query["tags"]}</title>;
+        if (urlLastQuery === "[tag]")
+          return <title>{router.query["tag"]}</title>;
 
         return <title>{urlLastQuery}</title>;
       })()}
@@ -27,43 +30,43 @@ export default function Seo() {
 
       {(() => {
         if (router.pathname === "/")
-          return <meta name="description" content="Jseedav" />;
-        if (router.pathname === "/articles")
-          return <meta name="description" content="All Articles" />;
+          return <meta name="description" content={siteName} />;
+        if (router.pathname === "/videos")
+          return <meta name="description" content="全部影片" />;
         if (router.pathname === "/about")
-          return <meta name="description" content="About Me" />;
-        if (router.pathname === "/category/web-development")
-          return <meta name="description" content="Web Development" />;
-        if (router.pathname === "/category/digital-marketing")
-          return <meta name="description" content="Digital Marketing" />;
+          return <meta name="description" content={`關於 ${siteName}`} />;
       })()}
 
       {/* og:title */}
       {(() => {
         if (router.pathname === "/")
-          return <meta property="og:title" content="Jseedav" />;
-        if (router.pathname === "/articles")
-          return <meta property="og:title" content="All Articles" />;
+          return <meta property="og:title" content={siteName} />;
+        if (router.pathname === "/videos")
+          return (
+            <meta
+              property="og:title"
+              content="全部影片 - Jseedav.com | 海量高清AV無限看 |"
+            />
+          );
         if (router.pathname === "/about")
-          return <meta property="og:title" content="About Me" />;
-        if (router.pathname === "/category/web-development")
-          return <meta property="og:title" content="Web Development" />;
-        if (router.pathname === "/category/digital-marketing")
-          return <meta property="og:title" content="Digital Marketing" />;
+          return <meta property="og:title" content={`關於 ${siteName}`} />;
       })()}
 
       {/* og:description */}
       {(() => {
         if (router.pathname === "/")
-          return <meta property="og:description" content="Jseedav" />;
-        if (router.pathname === "/articles")
-          return <meta property="og:description" content="All Articles" />;
+          return (
+            <meta
+              property="og:description"
+              content="Jseedav.com | 海量高清AV無限看 |"
+            />
+          );
+        if (router.pathname === "/videos")
+          return <meta property="og:description" content="全部影片" />;
         if (router.pathname === "/about")
-          return <meta property="og:description" content="About Me" />;
-        if (router.pathname === "/category/web-development")
-          return <meta property="og:description" content="Web Development" />;
-        if (router.pathname === "/category/digital-marketing")
-          return <meta property="og:description" content="Digital Marketing" />;
+          return (
+            <meta property="og:description" content={`關於 ${siteName}`} />
+          );
       })()}
 
       {/* og:url */}
@@ -78,12 +81,18 @@ export default function Seo() {
       })()}
 
       <meta property="og:type" content="video.movie" />
-      <meta property="og:site_name" content="Jseedav" />
-      <meta property="og:image" content="/images/showcase.jpg" />
+      <meta
+        property="og:site_name"
+        content="Jseedav.com | 海量高清AV無限看 |"
+      />
+      <meta property="og:image" content="/images/website-logo.png" />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="720" />
-      <meta property="og:locale" content="en-CA" />
-
+      <meta property="og:locale" content="zh-TW" />
+      <meta
+        name="keywords"
+        content="Jav,Japanese Av, Av, Japanese Adult movies, Adult movies, Jseedav, Jseedav.com, www.Jseedav.com, 日本AV, AV哥, 無修正AV, 無修正, AV, アダルト, セックス, エロ動画, 60FPS AV, HD AV, 無碼AV, 無廣告, 無広告 , 高清AV, Japan AV, iPhone AV, Android AV, Mobile AV, 素人, 女子校生, ギャル, コスプレ, 成人電影, 成人免費電影, 成人影片, 線上播放, BT下載, AV BT, 港女, 台妹, JAVHD, Microsoft, DMM, R18"
+      />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );

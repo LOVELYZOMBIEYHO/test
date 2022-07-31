@@ -28,7 +28,7 @@ export default function VideoitemHorizontal({ evt, categoryOptions }) {
         const resp = await axios.get(
           `https://api.countapi.xyz/get/jseedav.com/:PATHNAME:${evt.idCount}`
         );
-        console.log(resp.data.value);
+        // console.log(resp.data.value);
         setViewCount((prevState) => ({
           ...prevState,
           [evt.idCount]: resp.data.value,

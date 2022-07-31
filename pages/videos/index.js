@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "@/components/Layout";
-import VideoitemHorizontal from "@/components/VideoitemHorizontal";
+// import VideoitemHorizontal from "@/components/VideoitemHorizontal";
+import VideoitemHorizontalWithHover from "@/components/VideoitemHorizontalWithHover";
 import Showcase from "@/components/Showcase";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
@@ -25,12 +26,13 @@ export default function Home({ posts, categoryOptions, navbarOptions }) {
         <br />
         <br />
         <br />
+        <h1 className="text-center text-blue-300">全部影片</h1>
         {posts.length === 0 && <h3>No posts to show</h3>}
         <div className="inline-block">
           {/* Object.values can get _id(objects) value from mongodb as key */}
 
           {posts.map((evt) => (
-            <VideoitemHorizontal
+            <VideoitemHorizontalWithHover
               key={Object.values(evt.slug)}
               evt={evt}
               categoryOptions={categoryOptions}
