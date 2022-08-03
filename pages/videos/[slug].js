@@ -7,6 +7,8 @@ import Layout from "@/components/Layout";
 import VideoPlaylistWrapper from "@/components/VideoPlaylistWrapper";
 import VideoInfoWrapper from "@/components/VideoInfoWrapper";
 import AdpostA from "@/components/AdpostA";
+import VideoitemHorizontalWithHover from "@/components/VideoitemHorizontalWithHover";
+import VideoitemVertical from "@/components/VideoitemVertical";
 
 import { API_URL } from "@/config/index";
 import { revalidateTimeVariable } from "@/config/index";
@@ -32,7 +34,12 @@ import BtnSwitchComment from "@/components/BtnSwitchComment";
 // import CommentTypeBlock from "@/components/CommentTypeBlock";
 import VideoRelatedDiv from "@/components/VideoRelatedDiv";
 
-export default function PostPage({ posts, navbarOptions }) {
+export default function PostPage({
+  posts,
+  navbarOptions,
+  categoryOptions,
+  postsRecommand,
+}) {
   // //useRouter for check my url query
   // const router = useRouter();
   // const querySearch = router.query;
@@ -192,7 +199,19 @@ export default function PostPage({ posts, navbarOptions }) {
                         setSwitchComment={setSwitchComment}
                       />
 
-                      {switchRelatedVideos ? <VideoRelatedDiv /> : ""}
+                      {switchRelatedVideos ? (
+                        <>
+                          {postsRecommand.map((evt) => (
+                            <VideoitemVertical
+                              key={Object.values(evt.slug)}
+                              evt={evt}
+                              categoryOptions={categoryOptions}
+                            />
+                          ))}
+                        </>
+                      ) : (
+                        ""
+                      )}
 
                       {switchComment ? (
                         <div>
@@ -235,7 +254,21 @@ export default function PostPage({ posts, navbarOptions }) {
                 switchComment={switchComment}
                 setSwitchComment={setSwitchComment}
               />
-              {switchRelatedVideos ? <VideoRelatedDiv /> : ""}
+              {/* {switchRelatedVideos ? <VideoRelatedDiv /> : ""} */}
+              {switchRelatedVideos ? (
+                <>
+                  {postsRecommand.map((evt) => (
+                    <VideoitemVertical
+                      key={Object.values(evt.slug)}
+                      evt={evt}
+                      categoryOptions={categoryOptions}
+                    />
+                  ))}
+                </>
+              ) : (
+                ""
+              )}
+
               {switchComment ? (
                 <div>
                   {/* <CommentTypeBlock /> */}
@@ -330,6 +363,10 @@ export async function getStaticProps({ params: { slug } }) {
   const res = await fetch(`${API_URL}/post/${slug}`);
   const posts = await res.json();
 
+  // Random post for recommand
+  const resPostRecommand = await fetch(`${API_URL}/postrandomrecommand`);
+  const postsRecommand = await resPostRecommand.json();
+
   // Dynamic category colorKey and options
   const resCategoryOptions = await fetch(`${API_URL}/categoryoptions`);
   const categoryOptions = await resCategoryOptions.json();
@@ -353,6 +390,7 @@ export async function getStaticProps({ params: { slug } }) {
       posts,
       categoryOptions,
       navbarOptions,
+      postsRecommand,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
