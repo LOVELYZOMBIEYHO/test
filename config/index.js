@@ -23,3 +23,5 @@ export const FRONT_URL =
 export const revalidateTimeVariable = 120;
 
 // export const revalidateTimeVariable = 1;
+
+export const postsNumberPerPage = 20;

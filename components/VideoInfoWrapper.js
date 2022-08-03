@@ -293,7 +293,7 @@ export default function VideoInforWrapper({ postId, posts }) {
           <div className="views">{`${
             viewCount[posts[0].idCount]
           } views · ${dateForShow}`}</div>
-          <div className="video-options">
+          <div className="video-options noSelect">
             <div className="likes_dislikes">
               <span
                 className={`material-symbols-outlined cursor-pointer ${styles.hovertext} ${styles.likeBtn} ${showIsLike} likes_dislikes_span`}

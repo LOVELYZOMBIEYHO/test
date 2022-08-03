@@ -21,7 +21,8 @@ export default function BtnSwitchComment({
   };
 
   return (
-    <div>
+    // CSS prevent a button with user-select: none from selecting outer text on mobile
+    <div className="noSelect">
       <button onClick={clickSwitchRelatedVideos} className="p-3">
         相關影片
       </button>
