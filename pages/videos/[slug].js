@@ -7,6 +7,9 @@ import Layout from "@/components/Layout";
 import VideoPlaylistWrapper from "@/components/VideoPlaylistWrapper";
 import VideoInfoWrapper from "@/components/VideoInfoWrapper";
 import AdpostA from "@/components/AdpostA";
+import AdpostB from "@/components/AdpostB";
+import AdpostC from "@/components/AdpostC";
+
 import VideoitemHorizontalWithHover from "@/components/VideoitemHorizontalWithHover";
 import VideoitemVertical from "@/components/VideoitemVertical";
 
@@ -234,7 +237,6 @@ export default function PostPage({
               <AdpostA />
 
               <VideoPlaylistWrapper post={post} postSeries={postSeries} />
-              <AdpostA />
             </div>
           </div>
         </div>
@@ -334,6 +336,8 @@ export default function PostPage({
         </div>
       </div> */}
       {/* -------- */}
+      <AdpostB />
+      <AdpostC />
       {/* ---------- */}
     </Layout>
   );

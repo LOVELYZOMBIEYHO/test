@@ -4,7 +4,8 @@ import Link from "next/link";
 
 import Script from "next/script";
 
-export default function AdpostA() {
+// SocialBar
+export default function AdpostC() {
   return (
     <div className="m-10">
       {/* <Link
@@ -27,11 +28,9 @@ export default function AdpostA() {
 
       {/* Adsterra */}
       <Script
-        async="async"
-        data-cfasync="false"
-        src="//pl17559545.highperformancegate.com/e28ba9e484bf75db00eb45066ce57674/invoke.js"
+        type="text/javascript"
+        src="//pl17559699.highperformancegate.com/4b/43/5a/4b435a3b4b0db0bd1af9dab95877e7fe.js"
       />
-      <div id="container-e28ba9e484bf75db00eb45066ce57674"></div>
     </div>
   );
 }

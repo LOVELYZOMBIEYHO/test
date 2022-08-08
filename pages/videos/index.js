@@ -17,6 +17,8 @@ import Seopage from "@/components/Seopage";
 import { API_URL } from "@/config/index";
 import { postsNumberPerPage } from "@/config/index";
 
+import AdpostB from "@/components/AdpostB";
+
 export default function Home({ posts, categoryOptions, navbarOptions }) {
   const [cateColorKey, setCateColorKey] = useState([]); // Array
   let colorKeyCForCookiesA = "";
@@ -68,8 +70,18 @@ export default function Home({ posts, categoryOptions, navbarOptions }) {
               categoryOptions={categoryOptions}
             />
           ))}
+          <br />
+          <br />
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={posts.length}
+            paginate={paginate}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
       </div>
+      <AdpostB />
     </Layout>
   );
 }

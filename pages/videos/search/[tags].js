@@ -67,6 +67,8 @@ import Head from "next/head";
 import { API_URL } from "@/config/index";
 import { revalidateTimeVariable } from "@/config/index";
 
+import AdpostB from "@/components/AdpostB";
+
 export default function SearchPageResults({
   posts,
   categoryOptions,
@@ -102,6 +104,7 @@ export default function SearchPageResults({
           <div>{post.slug}</div>
         ))} */}
       </div>
+      <AdpostB />
     </Layout>
   );
 }

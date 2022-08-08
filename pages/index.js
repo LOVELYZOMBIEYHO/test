@@ -21,6 +21,9 @@ import { API_URL } from "@/config/index";
 import axios from "axios";
 import HoverVideoPlayer from "react-hover-video-player";
 
+import AdpostB from "@/components/AdpostB";
+import AdpostC from "@/components/AdpostC";
+
 export default function Home({ posts, navbarOptions, categoryOptions }) {
   // const test = ReactGA.send("pageview");
   // console.log(test);
@@ -53,6 +56,14 @@ export default function Home({ posts, navbarOptions, categoryOptions }) {
   //   checkLikedPosts();
   // }, []);
 
+  // --------------------
+
+  // <script
+  //   async="async"
+  //   data-cfasync="false"
+  //   src="//pl17559545.highperformancegate.com/e28ba9e484bf75db00eb45066ce57674/invoke.js"
+  // ></script>;
+  const [stripe, setStripe] = useState(null);
   return (
     <Layout navbarOptions={navbarOptions}>
       {/* <Seopage /> */}
@@ -92,18 +103,19 @@ export default function Home({ posts, navbarOptions, categoryOptions }) {
             categoryOptions={categoryOptions}
           />
         ))}
+        {/* ---------- */}
 
         {/* --------- */}
 
         <div className="w-full text-center my-5">
           {posts.length > 0 && (
             <Link href="/videos">
-              <a className="btn-secondary align-center-with-div">
-                View All posts
-              </a>
+              <a className="btn-secondary align-center-with-div">全部影片</a>
             </Link>
           )}
         </div>
+        <AdpostB />
+        <AdpostC />
       </div>
     </Layout>
   );

@@ -70,6 +70,8 @@ import { revalidateTimeVariable } from "@/config/index";
 import { useState, useEffect } from "react";
 import SearchFilterButton from "@/components/SearchFilterButton";
 
+import AdpostB from "@/components/AdpostB";
+
 export default function SearchPage({
   categoryOptions,
   navbarOptions,
@@ -127,6 +129,8 @@ export default function SearchPage({
 
         {/* <h1 className="text-red-600">Search Results for {router.query}</h1> */}
       </div>
+
+      <AdpostB />
     </Layout>
   );
 }

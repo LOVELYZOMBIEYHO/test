@@ -4,7 +4,8 @@ import Link from "next/link";
 
 import Script from "next/script";
 
-export default function AdpostA() {
+// 468x60px ad
+export default function AdpostD() {
   return (
     <div className="m-10">
       {/* <Link
@@ -26,12 +27,6 @@ export default function AdpostA() {
       </Link> */}
 
       {/* Adsterra */}
-      <Script
-        async="async"
-        data-cfasync="false"
-        src="//pl17559545.highperformancegate.com/e28ba9e484bf75db00eb45066ce57674/invoke.js"
-      />
-      <div id="container-e28ba9e484bf75db00eb45066ce57674"></div>
     </div>
   );
 }

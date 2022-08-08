@@ -13,7 +13,6 @@ class MyDocument extends Document {
             http-equiv="Content-Security-Policy"
             content="upgrade-insecure-requests"
           /> */}
-
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Staatliches"
@@ -29,11 +28,18 @@ class MyDocument extends Document {
             href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
             rel="stylesheet"
           /> */}
-
           <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
           />
+          {/* -------AD-------- */}
+          <script
+            async="async"
+            data-cfasync="false"
+            src="//pl17559545.highperformancegate.com/e28ba9e484bf75db00eb45066ce57674/invoke.js"
+          ></script>
+
+          {/* ------------ */}
         </Head>
         <body>
           <noscript>

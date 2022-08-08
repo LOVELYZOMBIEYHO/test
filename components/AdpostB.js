@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import Script from "next/script";
 
-export default function AdpostA() {
+export default function AdpostB() {
   return (
     <div className="m-10">
       {/* <Link
@@ -29,9 +29,9 @@ export default function AdpostA() {
       <Script
         async="async"
         data-cfasync="false"
-        src="//pl17559545.highperformancegate.com/e28ba9e484bf75db00eb45066ce57674/invoke.js"
+        src="//pl17559693.highperformancegate.com/6139c5d48a57496682d8bffa7eaa5a8a/invoke.js"
       />
-      <div id="container-e28ba9e484bf75db00eb45066ce57674"></div>
+      <div id="container-6139c5d48a57496682d8bffa7eaa5a8a"></div>
     </div>
   );
 }

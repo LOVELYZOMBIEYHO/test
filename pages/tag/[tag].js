@@ -74,6 +74,8 @@ import Seopage from "@/components/Seopage";
 import { API_URL } from "@/config/index";
 import { useEffect, useState } from "react";
 
+import AdpostB from "@/components/AdpostB";
+
 export default function tagfindposts({
   posts,
   tag,
@@ -113,6 +115,7 @@ export default function tagfindposts({
           ))}
         </div>
       </div>
+      <AdpostB />
     </Layout>
   );
 }

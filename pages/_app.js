@@ -76,7 +76,6 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-
       <Component {...pageProps} />
     </>
   );

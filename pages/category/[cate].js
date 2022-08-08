@@ -74,6 +74,8 @@ import Seopage from "@/components/Seopage";
 import { API_URL } from "@/config/index";
 import { useEffect, useState } from "react";
 
+import AdpostB from "@/components/AdpostB";
+
 export default function catefindposts({
   posts,
   cate,
@@ -112,6 +114,7 @@ export default function catefindposts({
           ))}
         </div>
       </div>
+      <AdpostB />
     </Layout>
   );
 }
