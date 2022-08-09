@@ -27,6 +27,11 @@ export default function AdpostD() {
       </Link> */}
 
       {/* Adsterra */}
+      {/* popunder ads -- but I saw this no different with popup */}
+      <Script
+        type="text/javascript"
+        src="//sympathydistinguish.com/8c/e9/9e/8ce99e60b9a27341dc804b4136ea6890.js"
+      />
     </div>
   );
 }

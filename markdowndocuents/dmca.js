@@ -9,7 +9,7 @@ const DMCAMD = `
 
 **To request the removal of materials based upon copyright infringement, you must file a notice containing the following: 1. Your name, address, telephone number, and email address (if any). 2. A description of the copyrighted work that you claim has been infringed. 3. A description of where on Jseedav’s service the material that you claim is infringing may be found, sufficient for Jseedav to locate the material (e.g., the URL for the video). 4. A statement that you have a good faith belief that the use of the copyrighted work is not authorized by the copyright owner, its agent, or the law. 5. A statement by you UNDER PENALTY OF PERJURY that the information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf. 6. Your electronic or physical signature.**
 
-**You may file your notice: - By email: jseedav@freemail.hu**
+**You may file your notice: - By email: jseedav@yahoo.com**
 
 **Jseedav may disclose notices with affected users and third-party databases that collect information about copyright takedown notices.**
 
@@ -17,7 +17,7 @@ const DMCAMD = `
 
 **If you are a Jseedav user who wishes to challenge the removal of materials caused by a DMCA takedown notice, you must file a counter-notification containing the following: 1. Your name, address, and telephone number. 2. A description of the material that was removed and the location on Jseedav’s service where it previously appeared (e.g., the URL of the video). 3. A statement UNDER PENALTY OF PERJURY that you have a good faith belief that the material was removed or disabled as a result of mistake or misidentification. 4. A statement that you consent to the jurisdiction of the Federal District Court for the judicial district in which your address is located, or if your address is outside of the United States, any judicial district in which Jseedav may be found (the United States District Court for the Southern District of New York), and that you will accept service of process from the person who filed the original DMCA notice or an agent of that person. 5. Your electronic or physical signature.**
 
-**You may submit this notice: - By email: jseedav@freemail.hu**
+**You may submit this notice: - By email: jseedav@yahoo.com**
 
 **Jseedav will forward any complete counter-notification to the person who filed the original DMCA notice. The copyright owner(s) may elect to file a lawsuit against you for copyright infringement. If we do not receive notice that such a lawsuit has been filed within ten (10) business days after we provide notice of your counter-notification, we may restore the challenged materials. Until that time, your materials will remain removed.**
 

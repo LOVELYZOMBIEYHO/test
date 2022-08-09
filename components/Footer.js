@@ -21,8 +21,14 @@ export default function Footer({ navbarOptions }) {
       <div className={Footerstyles.two}>
         <br />
         <p>關於</p>
-        <Link href="/about">關於這個網站</Link>
-        <div>投放廣告</div>
+        <div>
+          <Link href="/about">關於這個網站</Link>
+        </div>
+        <div>
+          <Link href="/contact">投放廣告</Link>
+        </div>
+
+        {/* <div>投放廣告</div> */}
       </div>
       <div className={Footerstyles.three}>
         <br />

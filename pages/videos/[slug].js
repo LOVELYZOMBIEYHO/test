@@ -9,6 +9,7 @@ import VideoInfoWrapper from "@/components/VideoInfoWrapper";
 import AdpostA from "@/components/AdpostA";
 import AdpostB from "@/components/AdpostB";
 import AdpostC from "@/components/AdpostC";
+// import AdpostD from "@/components/AdpostD";
 
 import VideoitemHorizontalWithHover from "@/components/VideoitemHorizontalWithHover";
 import VideoitemVertical from "@/components/VideoitemVertical";
@@ -338,6 +339,7 @@ export default function PostPage({
       {/* -------- */}
       <AdpostB />
       <AdpostC />
+      {/* <AdpostD /> */}
       {/* ---------- */}
     </Layout>
   );
