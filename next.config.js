@@ -62,7 +62,40 @@
 
 // ----------------------------------
 
-module.exports = {
+// module.exports = {
+//   images: {
+//     domains: [
+//       "res.cloudinary.com",
+//       "www.google.com",
+//       "images.unsplash.com",
+//       "en.wikipedia.org",
+//       "i.imgur.com",
+//       "cdn.jsdelivr.net",
+//       "cdn.pixabay.com",
+//       "webtoolsdepot.com",
+//       "video.gumlet.io",
+//     ],
+//     // domains: ["strapi-it-blog.herokuapp.com"],
+//   },
+
+//   eslint: {
+//     // Warning: This allows production builds to successfully complete even if
+//     // your project has ESLint errors.
+//     ignoreDuringBuilds: true,
+//   },
+//   swcMinify: true,
+// };
+
+// -----with PWA config-----------------------------------
+const withPWA = require("next-pwa");
+const runtimeCaching = require("next-pwa/cache");
+
+module.exports = withPWA({
+  reactStrictMode: true,
+  pwa: {
+    dest: "public",
+    runtimeCaching,
+  },
   images: {
     domains: [
       "res.cloudinary.com",
@@ -82,6 +115,7 @@ module.exports = {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
+    // ignoreDuringBuilds: false,
   },
   swcMinify: true,
-};
+});
