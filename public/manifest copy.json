@@ -3,7 +3,9 @@
   "short_name": "Next PWA",
   "theme_color": "#ffffff",
   "background_color": "#004740",
-  "display": "standalone",
+  "display": "fullscreen",
+  // "display": "standalone",
+  // "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
   "icons": [
