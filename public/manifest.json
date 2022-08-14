@@ -1,9 +1,9 @@
 {
-  "name": "Next.JS Progressive Web App",
-  "short_name": "Next PWA",
+  "name": "Jseedav",
+  "short_name": "Jseedav",
   "theme_color": "#ffffff",
   "background_color": "#004740",
-  "display": "browser",
+  "display": "minimal-ui",
   "scope": "/",
   "start_url": "/",
   "icons": [
