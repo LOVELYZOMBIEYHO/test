@@ -13,3 +13,7 @@ if error, the projects may have some error even you can use "npm run dev" to sta
 
 immediately revalidate again
 https://vercel.com/docs/concepts/next.js/incremental-static-regeneration
+
+git add .
+git commit -m "add commit"
+git push -u origin main

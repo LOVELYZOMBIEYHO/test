@@ -26,11 +26,12 @@ export default function AdpostC() {
         </a>
       </Link> */}
 
-      {/* Adsterra */}
-      <Script
+      {/* Adsterra Social bar*/}
+      {/* <Script
         type="text/javascript"
         src="//pl17559699.highperformancegate.com/4b/43/5a/4b435a3b4b0db0bd1af9dab95877e7fe.js"
-      />
+      /> */}
+      {/* Adsterra Social bar*/}
     </div>
   );
 }
