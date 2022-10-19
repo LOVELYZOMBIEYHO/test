@@ -136,7 +136,7 @@ export default function VideoPlaylistWrapper(evt) {
                       </a>
                     </Link> */}
                         <p className="text-sm font-medium dark:text-white">
-                          {evts.titleChinese}
+                          {evts.titleJapanese}
                         </p>
                         {/* <p className="text-sm text-gray-500 truncate dark:text-gray-400">
                           觀看次數
