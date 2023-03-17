@@ -9,7 +9,8 @@ export default function Seo() {
   const urlLastSplit = router.pathname.split("/");
   const urlLastQuery = urlLastSplit[urlLastSplit.length - 1];
 
-  const siteName = "Jseedav.com | 海量高清AV無限看 |";
+  const siteName =
+    "Cosplay AV無限看 | Cosplay JAV | Cosplay Porn - Jseedav.com";
 
   // console.log(urlLastQuery);
   // console.log(router.query["tag"]);
@@ -45,7 +46,7 @@ export default function Seo() {
           return (
             <meta
               property="og:title"
-              content="全部影片 - Jseedav.com | 海量高清AV無限看 |"
+              content="全部影片 - Jseedav.com | Cosplay AV無限看 | Cosplay JAV | Cosplay Porn"
             />
           );
         if (router.pathname === "/about")
@@ -58,7 +59,7 @@ export default function Seo() {
           return (
             <meta
               property="og:description"
-              content="Jseedav.com | 海量高清AV無限看 |"
+              content="Jseedav.com | Cosplay AV無限看 | Cosplay JAV | Cosplay Porn"
             />
           );
         if (router.pathname === "/videos")
@@ -83,7 +84,7 @@ export default function Seo() {
       <meta property="og:type" content="video.movie" />
       <meta
         property="og:site_name"
-        content="Jseedav.com | 海量高清AV無限看 |"
+        content="Jseedav.com | Cosplay AV無限看 | Cosplay JAV | Cosplay Porn"
       />
       <meta property="og:image" content="/images/website-logo.png" />
       <meta property="og:image:width" content="1280" />
@@ -91,7 +92,7 @@ export default function Seo() {
       <meta property="og:locale" content="zh-TW" />
       <meta
         name="keywords"
-        content="Jav,Japanese Av, Av, Japanese Adult movies, Adult movies, Jseedav, Jseedav.com, www.Jseedav.com, 日本AV, AV哥, 無修正AV, 無修正, AV, アダルト, セックス, エロ動画, 60FPS AV, HD AV, 無碼AV, 無廣告, 無広告 , 高清AV, Japan AV, iPhone AV, Android AV, Mobile AV, 素人, 女子校生, ギャル, コスプレ, 成人電影, 成人免費電影, 成人影片, 線上播放, BT下載, AV BT, 港女, 台妹, JAVHD, Microsoft, DMM, R18"
+        content="Jav,Japanese Av, Av, Japanese Adult movies, Adult movies, Jseedav, Jseedav.com, www.Jseedav.com, 日本AV, AV哥, 無修正AV, 無修正, AV, アダルト, セックス, エロ動画, 60FPS AV, HD AV, 無碼AV, 無廣告, 無広告 , 高清AV, Japan AV, iPhone AV, Android AV, Mobile AV, コスプレ, COSPLAY, Cosplay porn, Cosplay Jav, Cosplay av, 成人電影, 成人免費電影, 成人影片, 線上播放, BT下載, AV BT, JAVHD, Microsoft, DMM, R18"
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
